@@ -14,7 +14,6 @@
   --text:#EDF2F7;--muted:#7B93A8;--muted2:#4A6070;
   --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);
   --glow-teal:0 0 60px rgba(0,196,161,0.25);
-  --glow-red:0 0 60px rgba(255,59,59,0.2);
 }
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;line-height:1.6}
@@ -22,134 +21,48 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--dark)}
 ::-webkit-scrollbar-thumb{background:var(--teal2);border-radius:2px}
-
-/* CANVAS */
 #hero-canvas{position:absolute;inset:0;z-index:0;opacity:0.6}
 
 /* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:0 60px;height:72px;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:background 0.4s,backdrop-filter 0.4s,border-color 0.4s;
-  border-bottom:1px solid transparent;
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 60px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background 0.4s,backdrop-filter 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(6,12,18,0.92);backdrop-filter:blur(20px);border-color:var(--border)}
 .nav-logo{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;text-decoration:none;color:var(--text);letter-spacing:-0.5px}
 .nav-logo span{color:var(--teal)}
 .nav-links{display:flex;gap:40px;align-items:center}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;letter-spacing:0.2px}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{
-  background:var(--teal)!important;color:#000!important;
-  padding:10px 24px;border-radius:8px;font-weight:600!important;
-  font-size:14px!important;transition:all 0.2s!important;
-  box-shadow:0 0 24px rgba(0,196,161,0.4);
-}
+.nav-cta{background:var(--teal)!important;color:#000!important;padding:10px 24px;border-radius:8px;font-weight:600!important;font-size:14px!important;transition:all 0.2s!important;box-shadow:0 0 24px rgba(0,196,161,0.4)}
 .nav-cta:hover{background:#00e0b8!important;transform:translateY(-1px);box-shadow:0 4px 32px rgba(0,196,161,0.6)!important}
 
 /* HERO */
-.hero{
-  min-height:100vh;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  text-align:center;padding:120px 40px 100px;
-  position:relative;overflow:hidden;
-}
-.hero-bg-glow{
-  position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);
-  width:900px;height:600px;
-  background:radial-gradient(ellipse,rgba(0,196,161,0.08) 0%,transparent 70%);
-  pointer-events:none;z-index:0;
-}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 40px 100px;position:relative;overflow:hidden}
+.hero-bg-glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(0,196,161,0.08) 0%,transparent 70%);pointer-events:none;z-index:0}
 .hero-content{position:relative;z-index:2;max-width:960px}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.25);
-  color:var(--teal);padding:8px 20px;border-radius:100px;
-  font-size:13px;font-weight:600;letter-spacing:0.5px;
-  margin-bottom:36px;opacity:0;transform:translateY(20px);
-  animation:fadeUp 0.8s 0.2s ease forwards;
-}
-.live-dot{
-  width:8px;height:8px;border-radius:50%;background:var(--teal);
-  position:relative;flex-shrink:0;
-}
-.live-dot::after{
-  content:'';position:absolute;inset:-3px;border-radius:50%;
-  border:1px solid var(--teal);animation:ripple 2s infinite;
-}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.25);color:var(--teal);padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:0.5px;margin-bottom:36px;opacity:0;transform:translateY(20px);animation:fadeUp 0.8s 0.2s ease forwards}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);position:relative;flex-shrink:0}
+.live-dot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--teal);animation:ripple 2s infinite}
 @keyframes ripple{0%{transform:scale(1);opacity:1}100%{transform:scale(2.5);opacity:0}}
-
-.hero h1{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(52px,8vw,100px);
-  font-weight:800;line-height:0.95;letter-spacing:-4px;
-  margin-bottom:32px;
-  opacity:0;transform:translateY(30px);
-  animation:fadeUp 0.9s 0.4s ease forwards;
-}
-.word-wrap{display:inline-block;overflow:hidden;vertical-align:bottom}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(52px,8vw,100px);font-weight:800;line-height:0.95;letter-spacing:-4px;margin-bottom:32px;opacity:0;transform:translateY(30px);animation:fadeUp 0.9s 0.4s ease forwards}
 .hero h1 .teal{color:var(--teal);text-shadow:0 0 80px rgba(0,196,161,0.5)}
 .hero h1 .red{color:var(--red);text-shadow:0 0 80px rgba(255,59,59,0.4)}
-
-.hero-sub{
-  font-size:19px;color:var(--muted);line-height:1.75;
-  max-width:660px;margin:0 auto 52px;
-  opacity:0;transform:translateY(20px);
-  animation:fadeUp 0.9s 0.6s ease forwards;
-}
+.hero-sub{font-size:19px;color:var(--muted);line-height:1.75;max-width:660px;margin:0 auto 52px;opacity:0;transform:translateY(20px);animation:fadeUp 0.9s 0.6s ease forwards}
 .hero-sub strong{color:var(--text);font-weight:500}
-
-.hero-actions{
-  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
-  opacity:0;transform:translateY(20px);
-  animation:fadeUp 0.9s 0.8s ease forwards;
-}
-.btn-primary{
-  background:var(--teal);color:#000;padding:16px 40px;
-  border-radius:10px;font-family:'DM Sans',sans-serif;
-  font-weight:600;font-size:16px;text-decoration:none;
-  border:none;cursor:pointer;
-  box-shadow:0 0 40px rgba(0,196,161,0.4),0 4px 20px rgba(0,0,0,0.3);
-  transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;
-}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp 0.9s 0.8s ease forwards}
+.btn-primary{background:var(--teal);color:#000;padding:16px 40px;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;text-decoration:none;border:none;cursor:pointer;box-shadow:0 0 40px rgba(0,196,161,0.4),0 4px 20px rgba(0,0,0,0.3);transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}
 .btn-primary:hover{background:#00e0b8;transform:translateY(-3px);box-shadow:0 0 60px rgba(0,196,161,0.6),0 8px 30px rgba(0,0,0,0.3)}
-.btn-secondary{
-  background:rgba(255,255,255,0.04);color:var(--text);
-  padding:16px 40px;border-radius:10px;
-  font-family:'DM Sans',sans-serif;font-weight:500;font-size:16px;
-  text-decoration:none;border:1px solid var(--border2);
-  transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;
-}
+.btn-secondary{background:rgba(255,255,255,0.04);color:var(--text);padding:16px 40px;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:500;font-size:16px;text-decoration:none;border:1px solid var(--border2);transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}
 .btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
 .btn-arrow{transition:transform 0.2s}
 .btn-primary:hover .btn-arrow,.btn-secondary:hover .btn-arrow{transform:translateX(4px)}
-
-.scroll-hint{
-  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  opacity:0;animation:fadeUp 1s 1.2s ease forwards;
-}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp 1s 1.2s ease forwards}
 .scroll-hint span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted2)}
 .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--teal),transparent);animation:scrollPulse 2s infinite}
 @keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(0.8)}50%{opacity:1;transform:scaleY(1)}}
 
 /* ALARM STRIP */
-.alarm-strip{
-  background:linear-gradient(90deg,var(--red2),rgba(255,59,59,0.05),var(--red2));
-  border-top:1px solid rgba(255,59,59,0.15);
-  border-bottom:1px solid rgba(255,59,59,0.15);
-  padding:0;overflow:hidden;
-}
-.alarm-inner{
-  display:flex;gap:80px;white-space:nowrap;
-  animation:marquee 25s linear infinite;padding:14px 0;
-}
-.alarm-item{
-  display:flex;align-items:center;gap:12px;
-  font-size:13px;font-weight:600;letter-spacing:0.5px;
-  text-transform:uppercase;color:var(--red);flex-shrink:0;
-}
+.alarm-strip{background:linear-gradient(90deg,var(--red2),rgba(255,59,59,0.05),var(--red2));border-top:1px solid rgba(255,59,59,0.15);border-bottom:1px solid rgba(255,59,59,0.15);padding:0;overflow:hidden}
+.alarm-inner{display:flex;gap:80px;white-space:nowrap;animation:marquee 25s linear infinite;padding:14px 0}
+.alarm-item{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--red);flex-shrink:0}
 .alarm-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 1.5s infinite}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
@@ -157,23 +70,9 @@ nav.scrolled{background:rgba(6,12,18,0.92);backdrop-filter:blur(20px);border-col
 /* STATS */
 .stats-section{padding:80px 60px;background:var(--dark)}
 .stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border)}
-.stat-box{
-  background:var(--dark2);padding:48px 36px;text-align:center;
-  position:relative;overflow:hidden;transition:background 0.3s;
-}
+.stat-box{background:var(--dark2);padding:48px 36px;text-align:center;position:relative;overflow:hidden;transition:background 0.3s}
 .stat-box:hover{background:var(--dark3)}
-.stat-box::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at center bottom,var(--glow-color,transparent) 0%,transparent 70%);
-  opacity:0;transition:opacity 0.3s;
-}
-.stat-box:hover::before{opacity:1}
-.stat-box.red-glow{--glow-color:rgba(255,59,59,0.06)}
-.stat-box.teal-glow{--glow-color:rgba(0,196,161,0.06)}
-.stat-num{
-  font-family:'Syne',sans-serif;font-size:60px;font-weight:800;
-  line-height:1;letter-spacing:-3px;margin-bottom:12px;
-}
+.stat-num{font-family:'Syne',sans-serif;font-size:60px;font-weight:800;line-height:1;letter-spacing:-3px;margin-bottom:12px}
 .stat-num.red{color:var(--red);text-shadow:0 0 40px rgba(255,59,59,0.3)}
 .stat-num.teal{color:var(--teal);text-shadow:0 0 40px rgba(0,196,161,0.3)}
 .stat-lbl{font-size:14px;color:var(--muted);line-height:1.5;max-width:160px;margin:0 auto}
@@ -181,21 +80,13 @@ nav.scrolled{background:rgba(6,12,18,0.92);backdrop-filter:blur(20px);border-col
 
 /* SECTION COMMON */
 section{padding:120px 60px}
-.section-eyebrow{
-  font-size:11px;font-weight:700;letter-spacing:3px;
-  text-transform:uppercase;color:var(--teal);
-  margin-bottom:20px;display:flex;align-items:center;gap:12px;
-}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:12px}
 .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--teal)}
-.section-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(36px,4.5vw,60px);font-weight:800;
-  letter-spacing:-2px;line-height:1.05;margin-bottom:24px;
-}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(36px,4.5vw,60px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:24px}
 .section-body{font-size:18px;color:var(--muted);line-height:1.75;max-width:580px}
 .section-body strong{color:var(--text);font-weight:500}
 
-/* REVEAL ANIMATIONS */
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease}
 .reveal.visible{opacity:1;transform:none}
 .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s ease,transform 0.8s ease}
@@ -207,34 +98,13 @@ section{padding:120px 60px}
 /* VIDEO SECTION */
 .video-section{background:var(--dark2);padding:0;position:relative;overflow:hidden}
 .video-inner{max-width:1200px;margin:0 auto;padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.video-frame{
-  position:relative;border-radius:20px;overflow:hidden;
-  border:1px solid var(--border2);
-  box-shadow:0 40px 100px rgba(0,0,0,0.5),0 0 0 1px var(--border);
-  background:var(--dark3);aspect-ratio:16/9;
-}
-.video-overlay{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,rgba(6,12,18,0.7),rgba(10,20,32,0.5));
-  cursor:pointer;transition:background 0.3s;z-index:2;
-}
-.video-overlay:hover{background:linear-gradient(135deg,rgba(6,12,18,0.5),rgba(10,20,32,0.3))}
-.play-btn{
-  width:72px;height:72px;border-radius:50%;
-  background:var(--teal);display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 50px rgba(0,196,161,0.5),0 0 0 12px rgba(0,196,161,0.15);
-  transition:all 0.3s;
-}
-.video-overlay:hover .play-btn{transform:scale(1.1);box-shadow:0 0 70px rgba(0,196,161,0.7),0 0 0 16px rgba(0,196,161,0.2)}
+.video-frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border2);box-shadow:0 40px 100px rgba(0,0,0,0.5),0 0 0 1px var(--border);background:var(--dark3);aspect-ratio:16/9;cursor:pointer}
+.video-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(6,12,18,0.7),rgba(10,20,32,0.5));transition:background 0.3s;z-index:2}
+.video-overlay:hover{background:linear-gradient(135deg,rgba(6,12,18,0.4),rgba(10,20,32,0.2))}
+.play-btn{width:72px;height:72px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(0,196,161,0.5),0 0 0 12px rgba(0,196,161,0.15);transition:all 0.3s}
+.video-frame:hover .play-btn{transform:scale(1.1);box-shadow:0 0 70px rgba(0,196,161,0.7),0 0 0 16px rgba(0,196,161,0.2)}
 .play-icon{width:0;height:0;border-left:22px solid #000;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:4px}
-.video-thumbnail{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:0.7}
-.video-label{
-  position:absolute;bottom:16px;left:16px;z-index:3;
-  background:rgba(6,12,18,0.8);backdrop-filter:blur(8px);
-  border:1px solid var(--border2);border-radius:8px;
-  padding:8px 14px;font-size:12px;font-weight:600;color:var(--teal);letter-spacing:0.5px;
-}
-.video-iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:none}
+.video-label{position:absolute;bottom:16px;left:16px;z-index:3;background:rgba(6,12,18,0.8);backdrop-filter:blur(8px);border:1px solid var(--border2);border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;color:var(--teal);letter-spacing:0.5px}
 .video-text .section-body{margin-bottom:32px}
 
 /* HOW IT WORKS */
@@ -242,88 +112,28 @@ section{padding:120px 60px}
 .how-inner{max-width:1200px;margin:0 auto}
 .how-header{max-width:640px;margin-bottom:80px}
 .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:60px}
-.how-step{
-  background:var(--dark2);border:1px solid var(--border);
-  border-radius:20px;padding:44px 36px;position:relative;overflow:hidden;
-  transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;cursor:default;
-}
-.how-step:hover{
-  transform:translateY(-8px);
-  border-color:rgba(0,196,161,0.3);
-  box-shadow:0 30px 80px rgba(0,0,0,0.4),0 0 0 1px rgba(0,196,161,0.1);
-}
-.step-glow{
-  position:absolute;top:-40px;right:-40px;width:200px;height:200px;
-  background:radial-gradient(circle,rgba(0,196,161,0.08),transparent 70%);
-  pointer-events:none;opacity:0;transition:opacity 0.3s;
-}
+.how-step{background:var(--dark2);border:1px solid var(--border);border-radius:20px;padding:44px 36px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;cursor:default}
+.how-step:hover{transform:translateY(-8px);border-color:rgba(0,196,161,0.3);box-shadow:0 30px 80px rgba(0,0,0,0.4),0 0 0 1px rgba(0,196,161,0.1)}
+.step-glow{position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,196,161,0.08),transparent 70%);pointer-events:none;opacity:0;transition:opacity 0.3s}
 .how-step:hover .step-glow{opacity:1}
-.step-number{
-  font-family:'Syne',sans-serif;font-size:80px;font-weight:800;
-  color:rgba(255,255,255,0.03);line-height:1;
-  position:absolute;top:16px;right:20px;letter-spacing:-4px;
-}
-.step-icon-wrap{
-  width:52px;height:52px;border-radius:14px;
-  background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:24px;margin-bottom:28px;
-}
-.how-step h3{
-  font-family:'Syne',sans-serif;font-size:22px;font-weight:700;
-  letter-spacing:-0.3px;margin-bottom:14px;
-}
+.step-number{font-family:'Syne',sans-serif;font-size:80px;font-weight:800;color:rgba(255,255,255,0.03);line-height:1;position:absolute;top:16px;right:20px;letter-spacing:-4px}
+.step-icon-wrap{width:52px;height:52px;border-radius:14px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:28px}
+.how-step h3{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.3px;margin-bottom:14px}
 .how-step p{font-size:15px;color:var(--muted);line-height:1.7}
 .how-step p strong{color:var(--text);font-weight:500}
-
-/* ALGORITHM VISUAL */
-.algo-visual{
-  background:var(--dark3);border:1px solid var(--border);
-  border-radius:20px;padding:40px;
-  display:flex;align-items:center;gap:0;overflow-x:auto;
-}
-.algo-node{
-  display:flex;flex-direction:column;align-items:center;
-  flex:1;min-width:100px;position:relative;
-}
-.algo-box{
-  background:var(--dark2);border:1px solid var(--border2);
-  border-radius:12px;padding:14px 16px;text-align:center;
-  font-size:13px;font-weight:500;line-height:1.3;
-  transition:all 0.3s;position:relative;z-index:1;
-  width:100%;
-}
-.algo-box.active{
-  background:rgba(0,196,161,0.1);border-color:rgba(0,196,161,0.4);
-  color:var(--teal);box-shadow:0 0 30px rgba(0,196,161,0.15);
-}
-.algo-box.dispatch{
-  background:rgba(0,196,161,0.15);border-color:var(--teal);
-  color:var(--teal);box-shadow:0 0 40px rgba(0,196,161,0.2);
-  font-weight:700;
-}
-.algo-box.alert{
-  background:rgba(255,59,59,0.1);border-color:rgba(255,59,59,0.3);color:#ff6b6b;
-}
-.algo-arrow{
-  flex:0 0 30px;display:flex;align-items:center;justify-content:center;
-  font-size:18px;color:var(--muted2);
-}
+.algo-visual{background:var(--dark3);border:1px solid var(--border);border-radius:20px;padding:40px;display:flex;align-items:center;gap:0;overflow-x:auto}
+.algo-node{display:flex;flex-direction:column;align-items:center;flex:1;min-width:100px;position:relative}
+.algo-box{background:var(--dark2);border:1px solid var(--border2);border-radius:12px;padding:14px 16px;text-align:center;font-size:13px;font-weight:500;line-height:1.3;transition:all 0.3s;position:relative;z-index:1;width:100%}
+.algo-box.active{background:rgba(0,196,161,0.1);border-color:rgba(0,196,161,0.4);color:var(--teal);box-shadow:0 0 30px rgba(0,196,161,0.15)}
+.algo-box.dispatch{background:rgba(0,196,161,0.15);border-color:var(--teal);color:var(--teal);box-shadow:0 0 40px rgba(0,196,161,0.2);font-weight:700}
+.algo-arrow{flex:0 0 30px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted2)}
 .algo-sub{font-size:11px;color:var(--muted2);margin-top:6px;text-align:center;line-height:1.3}
 
-/* ETA SECTION */
+/* ETA */
 .eta-section{background:var(--dark2)}
 .eta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.eta-card{
-  background:var(--dark3);border:1px solid var(--border2);
-  border-radius:24px;padding:44px;
-  box-shadow:0 40px 100px rgba(0,0,0,0.3);
-  position:relative;overflow:hidden;
-}
-.eta-card::before{
-  content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;
-  background:radial-gradient(circle,rgba(0,196,161,0.06),transparent 70%);pointer-events:none;
-}
+.eta-card{background:var(--dark3);border:1px solid var(--border2);border-radius:24px;padding:44px;box-shadow:0 40px 100px rgba(0,0,0,0.3);position:relative;overflow:hidden}
+.eta-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(0,196,161,0.06),transparent 70%);pointer-events:none}
 .eta-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .eta-name{font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px}
 .eta-time{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;letter-spacing:-1px}
@@ -331,85 +141,38 @@ section{padding:120px 60px}
 .eta-bar-fill{height:100%;border-radius:100px;transition:width 2s cubic-bezier(0.4,0,0.2,1)}
 .eta-bar-ems{background:linear-gradient(90deg,#ff6b6b,var(--red));width:0}
 .eta-bar-fleet{background:linear-gradient(90deg,#00e0b8,var(--teal));width:0}
-.advantage-box{
-  background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);
-  border-radius:14px;padding:20px 24px;
-  display:flex;justify-content:space-between;align-items:center;margin-top:8px;
-}
+.advantage-box{background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;margin-top:8px}
 .adv-label{font-size:13px;color:var(--muted)}
-.adv-value{
-  font-family:'Syne',sans-serif;font-size:36px;font-weight:800;
-  color:var(--teal);letter-spacing:-1.5px;
-  text-shadow:0 0 30px rgba(0,196,161,0.4);
-}
-.eta-live{
-  display:flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:700;letter-spacing:2px;
-  text-transform:uppercase;color:var(--teal);margin-bottom:28px;
-}
+.adv-value{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--teal);letter-spacing:-1.5px;text-shadow:0 0 30px rgba(0,196,161,0.4)}
+.eta-live{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:28px}
 .eta-live-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 1.5s infinite}
 
-/* WHO SECTION */
+/* WHO */
 .who-section{background:var(--dark)}
 .who-inner{max-width:1200px;margin:0 auto}
 .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
-.who-card{
-  background:var(--dark2);border:1px solid var(--border);
-  border-radius:20px;padding:40px 36px;
-  transition:all 0.3s;cursor:default;position:relative;overflow:hidden;
-}
-.who-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--teal),transparent);
-  transform:scaleX(0);transform-origin:left;transition:transform 0.4s;
-}
+.who-card{background:var(--dark2);border:1px solid var(--border);border-radius:20px;padding:40px 36px;transition:all 0.3s;cursor:default;position:relative;overflow:hidden}
+.who-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
 .who-card:hover::after{transform:scaleX(1)}
 .who-card:hover{transform:translateY(-6px);border-color:rgba(0,196,161,0.2);box-shadow:0 30px 60px rgba(0,0,0,0.4)}
 .who-emoji{font-size:40px;margin-bottom:24px;display:block}
 .who-card h3{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;letter-spacing:-0.3px;margin-bottom:14px}
 .who-card p{font-size:15px;color:var(--muted);line-height:1.7}
 
-/* FOUNDER SECTION */
-.founder-section{
-  background:var(--dark2);
-  position:relative;overflow:hidden;
-}
+/* FOUNDER */
+.founder-section{background:var(--dark2);position:relative;overflow:hidden}
 .founder-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
-.founder-quote-wrap{position:relative}
-.quote-mark{
-  font-family:'Syne',sans-serif;font-size:200px;font-weight:800;
-  color:rgba(0,196,161,0.05);line-height:0.7;
-  position:absolute;top:0;left:-20px;
-  pointer-events:none;select:none;
-}
-.founder-quote{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(24px,3vw,36px);font-weight:700;
-  letter-spacing:-1px;line-height:1.25;
-  color:var(--text);position:relative;z-index:1;margin-bottom:40px;
-}
+.quote-mark{font-family:'Syne',sans-serif;font-size:200px;font-weight:800;color:rgba(0,196,161,0.05);line-height:0.7;position:absolute;top:0;left:-20px;pointer-events:none}
+.founder-quote{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-1px;line-height:1.25;color:var(--text);position:relative;z-index:1;margin-bottom:40px}
 .founder-quote .highlight{color:var(--teal)}
 .founder-meta{display:flex;align-items:center;gap:20px}
-.founder-avatar{
-  width:64px;height:64px;border-radius:50%;
-  background:linear-gradient(135deg,var(--teal),var(--teal2));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#000;
-  box-shadow:0 0 30px rgba(0,196,161,0.4);flex-shrink:0;
-}
+.founder-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#000;box-shadow:0 0 30px rgba(0,196,161,0.4);flex-shrink:0}
 .founder-name{font-weight:600;font-size:16px;margin-bottom:3px}
 .founder-title{font-size:13px;color:var(--muted)}
 .founder-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.f-stat{
-  background:var(--dark3);border:1px solid var(--border);
-  border-radius:16px;padding:28px 24px;
-  transition:border-color 0.3s,transform 0.3s;
-}
+.f-stat{background:var(--dark3);border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:border-color 0.3s,transform 0.3s}
 .f-stat:hover{border-color:rgba(0,196,161,0.25);transform:translateY(-3px)}
-.f-stat-num{
-  font-family:'Syne',sans-serif;font-size:38px;font-weight:800;
-  color:var(--teal);letter-spacing:-1.5px;margin-bottom:6px;
-}
+.f-stat-num{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;color:var(--teal);letter-spacing:-1.5px;margin-bottom:6px}
 .f-stat-label{font-size:13px;color:var(--muted);line-height:1.4}
 
 /* SUBSCRIPTION */
@@ -419,95 +182,41 @@ section{padding:120px 60px}
 .sub-header .section-eyebrow{justify-content:center}
 .sub-header .section-eyebrow::before{display:none}
 .sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.sub-card{
-  background:var(--dark2);border:1px solid var(--border);
-  border-radius:20px;padding:40px 36px;
-  position:relative;overflow:hidden;transition:all 0.3s;
-}
+.sub-card{background:var(--dark2);border:1px solid var(--border);border-radius:20px;padding:40px 36px;position:relative;overflow:hidden;transition:all 0.3s}
 .sub-card:hover{transform:translateY(-6px)}
-.sub-card.featured{
-  border-color:rgba(0,196,161,0.35);
-  background:linear-gradient(145deg,rgba(0,196,161,0.06),var(--dark2));
-  box-shadow:0 0 60px rgba(0,196,161,0.1),0 30px 60px rgba(0,0,0,0.3);
-}
-.sub-popular{
-  position:absolute;top:20px;right:20px;
-  background:var(--teal);color:#000;
-  font-size:11px;font-weight:700;letter-spacing:0.5px;
-  padding:5px 12px;border-radius:100px;
-}
+.sub-card.featured{border-color:rgba(0,196,161,0.35);background:linear-gradient(145deg,rgba(0,196,161,0.06),var(--dark2));box-shadow:0 0 60px rgba(0,196,161,0.1),0 30px 60px rgba(0,0,0,0.3)}
+.sub-popular{position:absolute;top:20px;right:20px;background:var(--teal);color:#000;font-size:11px;font-weight:700;letter-spacing:0.5px;padding:5px 12px;border-radius:100px}
 .sub-tier{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.sub-price{
-  font-family:'Syne',sans-serif;font-size:52px;font-weight:800;
-  letter-spacing:-2px;line-height:1;margin-bottom:6px;
-}
+.sub-price{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:6px}
 .sub-price span{font-size:20px;font-weight:400;color:var(--muted);letter-spacing:0}
 .sub-desc{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.5}
 .sub-divider{height:1px;background:var(--border);margin-bottom:28px}
-.sub-feature{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:14px;margin-bottom:12px;line-height:1.4;color:var(--muted);
-}
+.sub-feature{display:flex;align-items:flex-start;gap:10px;font-size:14px;margin-bottom:12px;line-height:1.4;color:var(--muted)}
 .sub-check{color:var(--teal);font-size:16px;flex-shrink:0;margin-top:1px}
-.sub-btn{
-  display:block;text-align:center;margin-top:32px;
-  padding:14px;border-radius:10px;font-size:15px;font-weight:600;
-  text-decoration:none;transition:all 0.2s;
-  border:1px solid var(--border2);color:var(--text);
-  background:rgba(255,255,255,0.04);
-}
+.sub-btn{display:block;text-align:center;margin-top:32px;padding:14px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all 0.2s;border:1px solid var(--border2);color:var(--text);background:rgba(255,255,255,0.04)}
 .sub-btn:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2)}
-.sub-btn.featured-btn{
-  background:var(--teal);color:#000;border-color:var(--teal);
-  box-shadow:0 0 30px rgba(0,196,161,0.3);
-}
+.sub-btn.featured-btn{background:var(--teal);color:#000;border-color:var(--teal);box-shadow:0 0 30px rgba(0,196,161,0.3)}
 .sub-btn.featured-btn:hover{background:#00e0b8;box-shadow:0 0 50px rgba(0,196,161,0.5);transform:translateY(-2px)}
 
 /* WAITLIST */
-.waitlist-section{
-  background:var(--dark2);padding:100px 60px;
-  position:relative;overflow:hidden;
-}
-.waitlist-glow{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:800px;height:400px;
-  background:radial-gradient(ellipse,rgba(0,196,161,0.06),transparent 70%);
-  pointer-events:none;
-}
+.waitlist-section{background:var(--dark2);padding:100px 60px;position:relative;overflow:hidden}
+.waitlist-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(0,196,161,0.06),transparent 70%);pointer-events:none}
 .waitlist-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1}
 .waitlist-inner .section-eyebrow{justify-content:center}
 .waitlist-inner .section-eyebrow::before{display:none}
-.waitlist-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(36px,5vw,64px);font-weight:800;
-  letter-spacing:-2.5px;line-height:1.0;margin-bottom:20px;
-}
+.waitlist-title{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-2.5px;line-height:1.0;margin-bottom:20px}
 .waitlist-sub{font-size:18px;color:var(--muted);margin-bottom:48px;line-height:1.6}
 .waitlist-form{display:flex;gap:12px;max-width:520px;margin:0 auto 20px}
-.waitlist-input{
-  flex:1;padding:15px 22px;border-radius:10px;
-  background:rgba(255,255,255,0.06);border:1px solid var(--border2);
-  color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;
-  outline:none;transition:border-color 0.2s,background 0.2s;
-}
+.waitlist-input{flex:1;padding:15px 22px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;outline:none;transition:border-color 0.2s,background 0.2s}
 .waitlist-input:focus{border-color:rgba(0,196,161,0.5);background:rgba(255,255,255,0.08)}
 .waitlist-input::placeholder{color:var(--muted2)}
 .waitlist-note{font-size:13px;color:var(--muted2)}
-.patent-badge-row{
-  display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px;
-}
-.patent-badge{
-  display:flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,0.03);border:1px solid var(--border);
-  border-radius:8px;padding:10px 16px;font-size:13px;color:var(--muted);
-}
+.patent-badge-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px}
+.patent-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--muted)}
 .patent-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0}
 
 /* FOOTER */
-footer{
-  background:var(--dark);padding:60px;
-  border-top:1px solid var(--border);
-}
+footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px;flex-wrap:wrap;gap:40px}
 .footer-brand .nav-logo{font-size:28px;display:block;margin-bottom:12px}
@@ -519,28 +228,30 @@ footer{
 .footer-copy{font-size:13px;color:var(--muted2)}
 .footer-patent{font-size:13px;color:var(--teal);font-weight:500}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+/* VIDEO MODAL */
+#video-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.97);display:none;align-items:center;justify-content:center}
+#video-modal.open{display:flex}
+.modal-close{position:absolute;top:24px;right:32px;z-index:10;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:20px;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:sans-serif;line-height:1}
+.modal-close:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.4)}
+.modal-hint{position:absolute;top:36px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;font-family:'DM Sans',sans-serif;white-space:nowrap}
+#modal-film{width:100vw;height:100vh;position:relative;overflow:hidden;cursor:pointer}
 
-/* RESPONSIVE */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @media(max-width:960px){
-  nav{padding:0 24px}
-  .nav-links{display:none}
-  section{padding:80px 24px}
-  .stats-inner{grid-template-columns:1fr 1fr}
+  nav{padding:0 24px}.nav-links{display:none}
+  section{padding:80px 24px}.stats-inner{grid-template-columns:1fr 1fr}
   .how-steps{grid-template-columns:1fr}
   .video-inner,.eta-inner,.founder-inner{grid-template-columns:1fr;gap:48px}
   .who-grid,.sub-grid{grid-template-columns:1fr}
-  .algo-visual{gap:4px}
-  .algo-box{font-size:11px;padding:10px 8px}
+  .algo-visual{gap:4px}.algo-box{font-size:11px;padding:10px 8px}
   .waitlist-form{flex-direction:column}
-  footer{padding:40px 24px}
-  .footer-top{flex-direction:column}
+  footer{padding:40px 24px}.footer-top{flex-direction:column}
 }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav id="nav">
   <a class="nav-logo" href="#">Micah<span>Meds</span></a>
   <div class="nav-links">
@@ -561,67 +272,41 @@ footer{
       <div class="live-dot"></div>
       Patent Pending · USPTO Filed April 2026
     </div>
-    <h1>
-      When Every<br>
-      <span class="teal">Second</span><br>
-      <span class="red">Saves Lives.</span>
-    </h1>
-    <p class="hero-sub">
-      MicahMeds is a <strong>patent-pending AI triage platform</strong> that closes the gap between calling for help and getting it — by intelligently dispatching the <strong>fastest available responder</strong> to urgent medical emergencies in real time.
-    </p>
+    <h1>When Every<br><span class="teal">Second</span><br><span class="red">Saves Lives.</span></h1>
+    <p class="hero-sub">MicahMeds is a <strong>patent-pending AI triage platform</strong> that closes the gap between calling for help and getting it — by intelligently dispatching the <strong>fastest available responder</strong> to urgent medical emergencies in real time.</p>
     <div class="hero-actions">
       <a href="#waitlist" class="btn-primary">Get Early Access <span class="btn-arrow">→</span></a>
       <a href="#how" class="btn-secondary">See How It Works <span class="btn-arrow">↓</span></a>
     </div>
   </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
 <!-- ALARM STRIP -->
 <div class="alarm-strip" id="problem">
-  <div class="alarm-inner" id="alarm-inner">
+  <div class="alarm-inner">
     <div class="alarm-item"><div class="alarm-dot"></div>14-min avg EMS response time</div>
     <div class="alarm-item"><div class="alarm-dot"></div>6% survival drop per minute</div>
     <div class="alarm-item"><div class="alarm-dot"></div>150,000+ preventable deaths annually</div>
     <div class="alarm-item"><div class="alarm-dot"></div>70% miss the critical 4-min window</div>
     <div class="alarm-item"><div class="alarm-dot"></div>20+ min rural EMS response</div>
-    <div class="alarm-item"><div class="alarm-dot"></div>EMS systems overwhelmed</div>
-    <!-- duplicate for seamless loop -->
+    <div class="alarm-item"><div class="alarm-dot"></div>EMS systems overwhelmed nationwide</div>
     <div class="alarm-item"><div class="alarm-dot"></div>14-min avg EMS response time</div>
     <div class="alarm-item"><div class="alarm-dot"></div>6% survival drop per minute</div>
     <div class="alarm-item"><div class="alarm-dot"></div>150,000+ preventable deaths annually</div>
     <div class="alarm-item"><div class="alarm-dot"></div>70% miss the critical 4-min window</div>
     <div class="alarm-item"><div class="alarm-dot"></div>20+ min rural EMS response</div>
-    <div class="alarm-item"><div class="alarm-dot"></div>EMS systems overwhelmed</div>
+    <div class="alarm-item"><div class="alarm-dot"></div>EMS systems overwhelmed nationwide</div>
   </div>
 </div>
 
 <!-- STATS -->
 <div class="stats-section">
   <div class="stats-inner">
-    <div class="stat-box red-glow reveal">
-      <div class="stat-num red" data-count="14" data-suffix=" min">0</div>
-      <div class="stat-lbl">Average U.S. urban EMS response time</div>
-      <div class="stat-source">NHTSA, 2023</div>
-    </div>
-    <div class="stat-box red-glow reveal delay-1">
-      <div class="stat-num red" data-count="6" data-suffix="%">0</div>
-      <div class="stat-lbl">Survival rate drop per minute without treatment</div>
-      <div class="stat-source">AHA Guidelines</div>
-    </div>
-    <div class="stat-box red-glow reveal delay-2">
-      <div class="stat-num red" data-count="150" data-suffix="K+">0</div>
-      <div class="stat-lbl">Preventable deaths annually from delayed response</div>
-      <div class="stat-source">CDC, 2024</div>
-    </div>
-    <div class="stat-box teal-glow reveal delay-3">
-      <div class="stat-num teal" data-count="4" data-suffix=" min">0</div>
-      <div class="stat-lbl">Target MicahMeds fleet response time, urban areas</div>
-      <div class="stat-source">MicahMeds Projection</div>
-    </div>
+    <div class="stat-box reveal"><div class="stat-num red" data-count="14" data-suffix=" min">0</div><div class="stat-lbl">Average U.S. urban EMS response time</div><div class="stat-source">NHTSA, 2023</div></div>
+    <div class="stat-box reveal delay-1"><div class="stat-num red" data-count="6" data-suffix="%">0</div><div class="stat-lbl">Survival rate drop per minute without treatment</div><div class="stat-source">AHA Guidelines</div></div>
+    <div class="stat-box reveal delay-2"><div class="stat-num red" data-count="150" data-suffix="K+">0</div><div class="stat-lbl">Preventable deaths annually from delayed response</div><div class="stat-source">CDC, 2024</div></div>
+    <div class="stat-box reveal delay-3"><div class="stat-num teal" data-count="4" data-suffix=" min">0</div><div class="stat-lbl">Target MicahMeds fleet response time, urban areas</div><div class="stat-source">MicahMeds Projection</div></div>
   </div>
 </div>
 
@@ -629,43 +314,32 @@ footer{
 <div class="video-section">
   <div class="video-inner">
     <div class="reveal-left">
-      <div class="video-frame" id="video-container">
+      <div class="video-frame" onclick="openVideo()">
         <div style="background:linear-gradient(135deg,#0a1420,#162436);width:100%;height:100%;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
           <div style="text-align:center;padding:40px">
             <div style="font-size:64px;margin-bottom:20px">🚨</div>
-            <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--teal);margin-bottom:8px">The Life-Saving Seconds Gap</div>
-            <div style="font-size:14px;color:var(--muted);line-height:1.6;max-width:280px;margin:0 auto">Every 14 minutes, someone waits for help that could arrive in 4. MicahMeds closes that gap.</div>
+            <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--teal);margin-bottom:8px">The Life-Saving Seconds Story</div>
+            <div style="font-size:14px;color:var(--muted);line-height:1.6;max-width:280px;margin:0 auto">Watch George's story — and how MicahMeds changes everything.</div>
           </div>
         </div>
-        <div class="video-overlay" id="play-btn" onclick="loadVideo()">
+        <div class="video-overlay">
           <div class="play-btn"><div class="play-icon"></div></div>
         </div>
-        <iframe class="video-iframe" id="yt-iframe" allow="autoplay;encrypted-media" allowfullscreen></iframe>
-        <div class="video-label">▶ Watch: How MicahMeds Works</div>
+        <div class="video-label">▶ Watch: Life-Saving Seconds — George's Story</div>
       </div>
     </div>
     <div class="reveal-right">
       <div class="video-text">
         <div class="section-eyebrow">The Mission</div>
         <h2 class="section-title">Bridging the gap that costs 150,000 lives a year</h2>
-        <p class="section-body">
-          Traditional EMS is overwhelmed. Ride-hailing networks have thousands of drivers already on the road — but <strong>no system connects them intelligently to emergencies.</strong>
-          <br><br>
-          MicahMeds changes that. Our patent-pending triage engine compares response times in real time and dispatches the fastest available, NEMTAC-certified driver — automatically.
-        </p>
+        <p class="section-body">Traditional EMS is overwhelmed. Ride-hailing networks have thousands of drivers already on the road — but <strong>no system connects them intelligently to emergencies.</strong><br><br>MicahMeds changes that. Our patent-pending triage engine compares response times in real time and dispatches the fastest available, NEMTAC-certified driver — automatically.</p>
         <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;align-items:center;gap:14px;font-size:15px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚡</div>
-            <span>Real-time comparative ETA analysis — <strong style="color:var(--text)">runs in under 3 seconds</strong></span>
-          </div>
-          <div style="display:flex;align-items:center;gap:14px;font-size:15px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🛡️</div>
-            <span>NEMTAC-certified drivers with <strong style="color:var(--text)">BLS training & AED on board</strong></span>
-          </div>
-          <div style="display:flex;align-items:center;gap:14px;font-size:15px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📱</div>
-            <span>One tap on your phone or <strong style="color:var(--text)">automatic via Apple Watch</strong></span>
-          </div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:15px"><div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚡</div><span>Real-time comparative ETA analysis — <strong style="color:var(--text)">runs in under 3 seconds</strong></span></div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:15px"><div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🛡️</div><span>NEMTAC-certified drivers with <strong style="color:var(--text)">BLS training & AED on board</strong></span></div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:15px"><div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📱</div><span>One tap on your phone or <strong style="color:var(--text)">automatic via Apple Watch</strong></span></div>
+        </div>
+        <div style="margin-top:36px">
+          <button onclick="openVideo()" class="btn-primary">▶ &nbsp;Watch George's Story</button>
         </div>
       </div>
     </div>
@@ -680,56 +354,36 @@ footer{
       <h2 class="section-title">The algorithm that runs in 3 seconds</h2>
       <p class="section-body">Our patent-pending Triage Engine doesn't just find the nearest driver — it compares two entirely different response networks and routes to the fastest one, every single time.</p>
     </div>
-
     <div class="how-steps">
       <div class="how-step reveal">
-        <div class="step-glow"></div>
-        <div class="step-number">01</div>
+        <div class="step-glow"></div><div class="step-number">01</div>
         <div class="step-icon-wrap">🆘</div>
         <h3>Emergency Triggered</h3>
-        <p>Activate via the MicahMeds app, <strong>Apple Watch</strong>, or MicahMeds medical bracelet. Your GPS coordinates and vitals are captured in under a second. <strong>"Call 911 Instead"</strong> is always visible — we supplement, never replace.</p>
+        <p>Activate via the MicahMeds app, <strong>Apple Watch</strong>, or MicahMeds medical bracelet. GPS coordinates and vitals captured in under a second. <strong>"Call 911 Instead"</strong> always visible.</p>
       </div>
       <div class="how-step reveal delay-2">
-        <div class="step-glow"></div>
-        <div class="step-number">02</div>
+        <div class="step-glow"></div><div class="step-number">02</div>
         <div class="step-icon-wrap">⚡</div>
         <h3>Algorithm Runs</h3>
-        <p>Our Triage Engine <strong>simultaneously queries</strong> EMS Computer-Aided Dispatch (CAD) systems and Uber's DeepETA API. It calculates the Time Advantage — <strong>ETA_EMS minus ETA_Fleet</strong> — in real time.</p>
+        <p>Our Triage Engine <strong>simultaneously queries</strong> EMS Computer-Aided Dispatch (CAD) systems and Uber's DeepETA API. Calculates the Time Advantage — <strong>ETA_EMS minus ETA_Fleet</strong> — in real time.</p>
       </div>
       <div class="how-step reveal delay-4">
-        <div class="step-glow"></div>
-        <div class="step-number">03</div>
+        <div class="step-glow"></div><div class="step-number">03</div>
         <div class="step-icon-wrap">🚗</div>
         <h3>Fastest Responder Dispatched</h3>
-        <p>If our NEMTAC-certified driver can arrive <strong>5+ minutes faster</strong>, they're dispatched instantly with a guaranteed Emergency Premium payment. You get real-time tracking and driver info immediately.</p>
+        <p>If our NEMTAC-certified driver can arrive <strong>5+ minutes faster</strong>, they're dispatched instantly with a guaranteed Emergency Premium payment and real-time tracking.</p>
       </div>
     </div>
-
     <div class="algo-visual reveal">
-      <div class="algo-node">
-        <div class="algo-box active">🆘 SOS Activated</div>
-        <div class="algo-sub">App · Watch · Bracelet</div>
-      </div>
+      <div class="algo-node"><div class="algo-box active">🆘 SOS Activated</div><div class="algo-sub">App · Watch · Bracelet</div></div>
       <div class="algo-arrow">→</div>
-      <div class="algo-node">
-        <div class="algo-box active">📍 GPS + Vitals Captured</div>
-        <div class="algo-sub">&lt;1 second</div>
-      </div>
+      <div class="algo-node"><div class="algo-box active">📍 GPS + Vitals</div><div class="algo-sub">&lt;1 second</div></div>
       <div class="algo-arrow">→</div>
-      <div class="algo-node">
-        <div class="algo-box active">⚡ Query EMS CAD + Uber API</div>
-        <div class="algo-sub">Simultaneous</div>
-      </div>
+      <div class="algo-node"><div class="algo-box active">⚡ Query EMS + Uber API</div><div class="algo-sub">Simultaneous</div></div>
       <div class="algo-arrow">→</div>
-      <div class="algo-node">
-        <div class="algo-box active">🧠 Calculate Time Advantage</div>
-        <div class="algo-sub">ETA_EMS − ETA_Fleet</div>
-      </div>
+      <div class="algo-node"><div class="algo-box active">🧠 Calculate Time Advantage</div><div class="algo-sub">ETA_EMS − ETA_Fleet</div></div>
       <div class="algo-arrow">→</div>
-      <div class="algo-node">
-        <div class="algo-box dispatch">🚗 DISPATCH MicahMeds</div>
-        <div class="algo-sub">+$100 Emergency Premium</div>
-      </div>
+      <div class="algo-node"><div class="algo-box dispatch">🚗 DISPATCH MicahMeds</div><div class="algo-sub">+$100 Emergency Premium</div></div>
     </div>
   </div>
 </section>
@@ -740,11 +394,7 @@ footer{
     <div class="reveal-left">
       <div class="section-eyebrow">Live Comparison</div>
       <h2 class="section-title">10 minutes can mean everything</h2>
-      <p class="section-body">
-        In a stroke emergency, <strong>every 15 minutes faster</strong> to treatment meaningfully changes the patient's outcome. Our accredited fleet averages a 4-minute response time in urban areas — compared to the national EMS average of 14 minutes.
-        <br><br>
-        That's not just faster. For conditions like stroke, cardiac events, and serious falls, <strong>that difference can determine whether someone walks out of the hospital or doesn't.</strong>
-      </p>
+      <p class="section-body">In a stroke emergency, <strong>every 15 minutes faster</strong> to treatment meaningfully changes outcomes. Our accredited fleet averages a 4-minute response time in urban areas — vs. the national EMS average of 14 minutes.<br><br>For stroke, cardiac events, and serious falls, <strong>that difference can determine whether someone walks out of the hospital or doesn't.</strong></p>
       <div style="margin-top:40px;display:flex;gap:20px;flex-wrap:wrap">
         <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:16px 20px;font-size:14px;color:var(--teal);font-weight:600">NEMTAC-Certified Drivers</div>
         <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:16px 20px;font-size:14px;color:var(--teal);font-weight:600">AED + BLS Equipment</div>
@@ -754,36 +404,15 @@ footer{
     <div class="reveal-right">
       <div class="eta-card" id="eta-card">
         <div class="eta-live"><div class="eta-live-dot"></div>Live ETA Comparison Engine</div>
-        <div class="eta-label-row">
-          <div class="eta-name"><span style="font-size:18px">🚑</span> Traditional EMS</div>
-          <div class="eta-time" style="color:var(--red)" id="ems-time">14 min</div>
-        </div>
+        <div class="eta-label-row"><div class="eta-name"><span style="font-size:18px">🚑</span> Traditional EMS</div><div class="eta-time" style="color:var(--red)">14 min</div></div>
         <div class="eta-bar-track"><div class="eta-bar-fill eta-bar-ems" id="ems-bar"></div></div>
-        <div class="eta-label-row">
-          <div class="eta-name"><span style="font-size:18px">🟢</span> MicahMeds Fleet</div>
-          <div class="eta-time" style="color:var(--teal)" id="fleet-time">4 min</div>
-        </div>
+        <div class="eta-label-row"><div class="eta-name"><span style="font-size:18px">🟢</span> MicahMeds Fleet</div><div class="eta-time" style="color:var(--teal)">4 min</div></div>
         <div class="eta-bar-track"><div class="eta-bar-fill eta-bar-fleet" id="fleet-bar"></div></div>
-        <div class="advantage-box">
-          <div>
-            <div class="adv-label">Time Advantage</div>
-            <div style="font-size:11px;color:var(--muted2);margin-top:4px">Threshold exceeded → Dispatching now</div>
-          </div>
-          <div class="adv-value" id="advantage-val">+10 min</div>
-        </div>
+        <div class="advantage-box"><div><div class="adv-label">Time Advantage</div><div style="font-size:11px;color:var(--muted2);margin-top:4px">Threshold exceeded → Dispatching now</div></div><div class="adv-value">+10 min</div></div>
         <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
-          <div style="flex:1;background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
-            <div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Response</div>
-            <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--teal)">4 min</div>
-          </div>
-          <div style="flex:1;background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
-            <div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Certified</div>
-            <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--teal)">NEMTAC</div>
-          </div>
-          <div style="flex:1;background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
-            <div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Algorithm</div>
-            <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--teal)">3 sec</div>
-          </div>
+          <div style="flex:1;background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center"><div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Response</div><div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--teal)">4 min</div></div>
+          <div style="flex:1;background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center"><div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Certified</div><div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--teal)">NEMTAC</div></div>
+          <div style="flex:1;background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center"><div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Algorithm</div><div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--teal)">3 sec</div></div>
         </div>
       </div>
     </div>
@@ -799,74 +428,42 @@ footer{
       <p class="section-body">MicahMeds isn't a replacement for 911 — it's a supplement for urgent conditions where faster transport can meaningfully change outcomes.</p>
     </div>
     <div class="who-grid">
-      <div class="who-card reveal delay-1">
-        <span class="who-emoji">👴</span>
-        <h3>Seniors & Independent Adults</h3>
-        <p>Stroke symptoms, falls, diabetic emergencies — conditions where getting to care faster means the difference between full recovery and lasting disability. Peace of mind for those living independently.</p>
-      </div>
-      <div class="who-card reveal delay-2">
-        <span class="who-emoji">🏥</span>
-        <h3>Healthcare Facilities</h3>
-        <p>Assisted living, senior communities, and rehabilitation centers gain a dedicated emergency transport network with real-time oversight, NEMTAC-certified drivers, and HIPAA-compliant documentation.</p>
-      </div>
-      <div class="who-card reveal delay-3">
-        <span class="who-emoji">👨‍👩‍👧</span>
-        <h3>Families & Caregivers</h3>
-        <p>Our MikaPrime subscriptions give families real peace of mind — knowing that if a loved one needs help, the fastest possible, medically-trained response is automatically on its way.</p>
-      </div>
+      <div class="who-card reveal delay-1"><span class="who-emoji">👴</span><h3>Seniors & Independent Adults</h3><p>Stroke symptoms, falls, diabetic emergencies — where faster transport means the difference between full recovery and lasting disability.</p></div>
+      <div class="who-card reveal delay-2"><span class="who-emoji">🏥</span><h3>Healthcare Facilities</h3><p>Assisted living, senior communities, and rehabilitation centers gain a dedicated emergency transport network with NEMTAC-certified drivers and HIPAA-compliant documentation.</p></div>
+      <div class="who-card reveal delay-3"><span class="who-emoji">👨‍👩‍👧</span><h3>Families & Caregivers</h3><p>MikaPrime subscriptions give families real peace of mind — if a loved one needs help, the fastest medically-trained response is automatically on its way.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FOUNDER SECTION -->
+<!-- FOUNDER -->
 <section class="founder-section" id="about">
-  <div class="founder-inner" style="max-width:1200px;margin:0 auto">
+  <div class="founder-inner">
     <div class="reveal-left">
       <div class="quote-mark">"</div>
-      <blockquote class="founder-quote">
-        "I spent 10 years as a clinician watching patients lose <span class="highlight">everything</span> in the minutes between an emergency and an ambulance. I built MicahMeds because <span class="highlight">those minutes are preventable.</span>"
-      </blockquote>
+      <blockquote class="founder-quote">"I spent 10 years as a clinician watching patients lose <span class="highlight">everything</span> in the minutes between an emergency and an ambulance. I built MicahMeds because <span class="highlight">those minutes are preventable.</span>"</blockquote>
       <div class="founder-meta">
         <div class="founder-avatar">M</div>
-        <div>
-          <div class="founder-name">Maria Mikaela Vicerra Borja</div>
-          <div class="founder-title">Founder & CEO · OTR/L, PTA · USPTO Patent Pending · April 2026</div>
-        </div>
+        <div><div class="founder-name">Maria Mikaela Vicerra Borja</div><div class="founder-title">Founder & CEO · OTR/L, PTA · USPTO Patent Pending · April 2026</div></div>
       </div>
     </div>
     <div class="reveal-right">
-      <div style="margin-bottom:20px">
-        <div class="section-eyebrow">The Founder</div>
-        <p class="section-body" style="margin-bottom:0">A clinician-turned-founder with 10+ years of hands-on experience in occupational and physical therapy — and a personal mission to prevent the delays she witnessed firsthand.</p>
-      </div>
+      <div style="margin-bottom:20px"><div class="section-eyebrow">The Founder</div><p class="section-body" style="margin-bottom:0">A clinician-turned-founder with 10+ years of hands-on experience in occupational and physical therapy — and a personal mission to prevent the delays she witnessed firsthand.</p></div>
       <div class="founder-stats">
-        <div class="f-stat reveal delay-1">
-          <div class="f-stat-num">10+</div>
-          <div class="f-stat-label">Years clinical experience as OTR/L & PTA</div>
-        </div>
-        <div class="f-stat reveal delay-2">
-          <div class="f-stat-num">15</div>
-          <div class="f-stat-label">Patent claims filed protecting the core algorithm</div>
-        </div>
-        <div class="f-stat reveal delay-3">
-          <div class="f-stat-num">$60</div>
-          <div class="f-stat-label">USPTO micro-entity filing — building lean from day one</div>
-        </div>
-        <div class="f-stat reveal delay-4">
-          <div class="f-stat-num">April<br><span style="font-size:24px">2026</span></div>
-          <div class="f-stat-label">Patent pending · Priority date secured</div>
-        </div>
+        <div class="f-stat reveal delay-1"><div class="f-stat-num">10+</div><div class="f-stat-label">Years clinical experience as OTR/L & PTA</div></div>
+        <div class="f-stat reveal delay-2"><div class="f-stat-num">15</div><div class="f-stat-label">Patent claims filed protecting the core algorithm</div></div>
+        <div class="f-stat reveal delay-3"><div class="f-stat-num">$60</div><div class="f-stat-label">USPTO micro-entity filing — building lean from day one</div></div>
+        <div class="f-stat reveal delay-4"><div class="f-stat-num" style="font-size:28px">April<br>2026</div><div class="f-stat-label">Patent pending · Priority date secured</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SUBSCRIPTION PLANS -->
+<!-- PLANS -->
 <section class="sub-section" id="plans">
   <div class="sub-inner">
     <div class="sub-header reveal">
       <div class="section-eyebrow">MikaPrime Plans</div>
-      <h2 class="section-title">Healthcare security<br>at every level</h2>
+      <h2 class="section-title">Healthcare security at every level</h2>
       <p class="section-body" style="margin:0 auto;text-align:center">Transparent, subscription-based coverage that funds your emergency response network — and fairly rewards the drivers who answer the call.</p>
     </div>
     <div class="sub-grid">
@@ -910,10 +507,7 @@ footer{
         <a href="#waitlist" class="sub-btn">Get Early Access</a>
       </div>
     </div>
-    <div style="text-align:center;margin-top:40px;font-size:14px;color:var(--muted)">
-      40% of every subscription funds the Emergency Premium that incentivizes certified drivers to respond.<br>
-      <strong style="color:var(--text)">Your subscription directly saves lives.</strong>
-    </div>
+    <div style="text-align:center;margin-top:40px;font-size:14px;color:var(--muted)">40% of every subscription funds the Emergency Premium that incentivizes certified drivers to respond.<br><strong style="color:var(--text)">Your subscription directly saves lives.</strong></div>
   </div>
 </section>
 
@@ -955,14 +549,14 @@ footer{
       </div>
       <div class="footer-links-group">
         <h4>For Partners</h4>
-        <a href="mailto:contact@micahmeds.com">Healthcare Facilities</a>
-        <a href="mailto:contact@micahmeds.com">Driver Accreditation</a>
-        <a href="mailto:contact@micahmeds.com">Investors</a>
-        <a href="mailto:contact@micahmeds.com">EMS Agencies</a>
+        <a href="mailto:lifesavingseconds@micahmeds.com">Healthcare Facilities</a>
+        <a href="mailto:lifesavingseconds@micahmeds.com">Driver Accreditation</a>
+        <a href="mailto:lifesavingseconds@micahmeds.com">Investors</a>
+        <a href="mailto:lifesavingseconds@micahmeds.com">EMS Agencies</a>
       </div>
       <div class="footer-links-group">
         <h4>Contact</h4>
-        <a href="mailto:contact@micahmeds.com">contact@micahmeds.com</a>
+        <a href="mailto:lifesavingseconds@micahmeds.com">lifesavingseconds@micahmeds.com</a>
         <a href="#">LinkedIn</a>
         <a href="#">Instagram</a>
       </div>
@@ -974,13 +568,22 @@ footer{
   </div>
 </footer>
 
+<!-- ═══════════════════════════════════════════ -->
+<!-- MARKETING VIDEO MODAL                      -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="video-modal">
+  <button class="modal-close" onclick="closeVideo()">✕</button>
+  <div class="modal-hint">PRESS ESC TO CLOSE &nbsp;·&nbsp; CLICK TO ADVANCE SCENES</div>
+  <div id="modal-film"></div>
+</div>
+
 <script>
-// NAV SCROLL
+// ── NAV SCROLL ──
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)
 })
 
-// CANVAS PARTICLE SYSTEM
+// ── CANVAS PARTICLES ──
 const canvas=document.getElementById('hero-canvas')
 const ctx=canvas.getContext('2d')
 let particles=[],W,H
@@ -988,116 +591,424 @@ function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offse
 resize();window.addEventListener('resize',resize)
 class Particle{
   constructor(){this.reset()}
-  reset(){
-    this.x=Math.random()*W;this.y=Math.random()*H;
-    this.vx=(Math.random()-0.5)*0.4;this.vy=(Math.random()-0.5)*0.4;
-    this.size=Math.random()*2+0.5;this.alpha=Math.random()*0.4+0.1;
-    this.color=Math.random()>0.7?'0,196,161':'255,255,255';
-  }
-  update(){
-    this.x+=this.vx;this.y+=this.vy;
-    if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset();
-  }
-  draw(){
-    ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-    ctx.fillStyle=`rgba(${this.color},${this.alpha})`;ctx.fill();
-  }
+  reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-0.5)*0.4;this.vy=(Math.random()-0.5)*0.4;this.size=Math.random()*2+0.5;this.alpha=Math.random()*0.4+0.1;this.color=Math.random()>0.7?'0,196,161':'255,255,255'}
+  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset()}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fillStyle=`rgba(${this.color},${this.alpha})`;ctx.fill()}
 }
 for(let i=0;i<120;i++)particles.push(new Particle())
-function drawConnections(){
-  for(let i=0;i<particles.length;i++){
-    for(let j=i+1;j<particles.length;j++){
-      const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y;
-      const dist=Math.sqrt(dx*dx+dy*dy);
-      if(dist<120){
-        ctx.beginPath();
-        ctx.strokeStyle=`rgba(0,196,161,${0.06*(1-dist/120)})`;
-        ctx.lineWidth=0.5;ctx.moveTo(particles[i].x,particles[i].y);
-        ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();
-      }
-    }
-  }
-}
-function animate(){
-  ctx.clearRect(0,0,W,H);
-  drawConnections();
-  particles.forEach(p=>{p.update();p.draw()});
-  requestAnimationFrame(animate);
-}
-animate();
+function drawConn(){for(let i=0;i<particles.length;i++)for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.strokeStyle=`rgba(0,196,161,${0.06*(1-d/120)})`;ctx.lineWidth=0.5;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke()}}}
+function animate(){ctx.clearRect(0,0,W,H);drawConn();particles.forEach(p=>{p.update();p.draw()});requestAnimationFrame(animate)}
+animate()
 
-// SCROLL REVEAL
-const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right')
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
-},{threshold:0.12,rootMargin:'0px 0px -40px 0px'})
-revealEls.forEach(el=>observer.observe(el))
+// ── SCROLL REVEAL ──
+const revEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right')
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'})
+revEls.forEach(el=>obs.observe(el))
 
-// COUNTER ANIMATION
-function animateCounter(el){
-  const target=parseInt(el.dataset.count);
-  const suffix=el.dataset.suffix||'';
-  let start=0,duration=2000,startTime=null;
-  function step(ts){
-    if(!startTime)startTime=ts;
-    const progress=Math.min((ts-startTime)/duration,1);
-    const ease=1-Math.pow(1-progress,3);
-    const current=Math.floor(ease*target);
-    el.textContent=current+suffix;
-    if(progress<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-const counterObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const el=e.target;
-      if(!el.dataset.counted){el.dataset.counted=1;animateCounter(el)}
-    }
-  })
-},{threshold:0.5})
-document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el))
+// ── COUNTER ANIMATION ──
+function animCount(el){const target=parseInt(el.dataset.count),suffix=el.dataset.suffix||'';let st=null;function step(ts){if(!st)st=ts;const p=Math.min((ts-st)/2000,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*target)+suffix;if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted=1;animCount(e.target)}})},{threshold:0.5})
+document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el))
 
-// ETA BAR ANIMATION
-const etaObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting&&!e.target.dataset.animated){
-      e.target.dataset.animated=1;
-      setTimeout(()=>{document.getElementById('ems-bar').style.width='100%'},300);
-      setTimeout(()=>{document.getElementById('fleet-bar').style.width='29%'},600);
-    }
-  })
-},{threshold:0.4})
-const etaCard=document.getElementById('eta-card');
-if(etaCard)etaObserver.observe(etaCard)
+// ── ETA BARS ──
+const etaObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.a){e.target.dataset.a=1;setTimeout(()=>{document.getElementById('ems-bar').style.width='100%'},300);setTimeout(()=>{document.getElementById('fleet-bar').style.width='29%'},600)}})},{threshold:0.4})
+const etaCard=document.getElementById('eta-card')
+if(etaCard)etaObs.observe(etaCard)
 
-// VIDEO LOAD
-function loadVideo(){
-  const overlay=document.getElementById('play-btn');
-  const iframe=document.getElementById('yt-iframe');
-  overlay.style.display='none';
-  iframe.style.display='block';
-  iframe.src='https://www.youtube.com/embed/dMnJFWJOKWg?autoplay=1&mute=0';
-}
+// ── PARALLAX ──
+window.addEventListener('scroll',()=>{const y=window.scrollY,g=document.querySelector('.hero-bg-glow');if(g)g.style.transform=`translate(-50%,calc(-50% + ${y*0.3}px))`})
 
-// WAITLIST
+// ── WAITLIST ──
 function joinWaitlist(){
-  const email=document.getElementById('waitlist-email').value;
-  const msg=document.getElementById('waitlist-msg');
-  if(!email||!email.includes('@')){
-    msg.style.color='var(--red)';msg.textContent='Please enter a valid email address.';return;
-  }
-  msg.style.color='var(--teal)';
-  msg.textContent="✓ You're on the list! We'll be in touch when we launch near you.";
-  document.getElementById('waitlist-email').value='';
+  const email=document.getElementById('waitlist-email').value
+  const msg=document.getElementById('waitlist-msg')
+  if(!email||!email.includes('@')){msg.style.color='var(--red)';msg.textContent='Please enter a valid email address.';return}
+  msg.style.color='var(--teal)';msg.textContent="✓ You're on the list! We'll be in touch when we launch near you."
+  document.getElementById('waitlist-email').value=''
 }
 
-// SMOOTH PARALLAX ON HERO BG
-window.addEventListener('scroll',()=>{
-  const y=window.scrollY;
-  const glow=document.querySelector('.hero-bg-glow');
-  if(glow)glow.style.transform=`translate(-50%,calc(-50% + ${y*0.3}px))`;
-})
+// ══════════════════════════════════════════════
+// MARKETING VIDEO — INLINE PLAYER
+// ══════════════════════════════════════════════
+const VIDEO_SCENES=[
+  {id:'vs1',dur:6000,counter:'01 / 07'},
+  {id:'vs2',dur:7000,counter:'02 / 07'},
+  {id:'vs3',dur:6000,counter:'03 / 07'},
+  {id:'vs4',dur:8000,counter:'04 / 07'},
+  {id:'vs5',dur:6000,counter:'05 / 07'},
+  {id:'vs6',dur:7000,counter:'06 / 07'},
+  {id:'vs7',dur:8000,counter:'07 / 07'},
+]
+const VID_TOTAL=VIDEO_SCENES.reduce((a,s)=>a+s.dur,0)
+let vCurrent=0,vSceneTimer=null,vProgTimer=null,vStartTime=null,vOpen=false
+
+function openVideo(){
+  document.getElementById('video-modal').classList.add('open')
+  document.body.style.overflow='hidden'
+  vOpen=true;vCurrent=0
+  buildFilm()
+  vShowScene(0)
+  vStartProgress()
+}
+
+function closeVideo(){
+  document.getElementById('video-modal').classList.remove('open')
+  document.body.style.overflow=''
+  vOpen=false
+  clearTimeout(vSceneTimer);clearInterval(vProgTimer)
+  document.getElementById('modal-film').innerHTML=''
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vOpen)closeVideo()})
+
+function buildFilm(){
+  const film=document.getElementById('modal-film')
+  film.innerHTML=`
+<style>
+#modal-film{background:#000;font-family:'DM Sans',sans-serif}
+.vs{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0s}
+.vs.active{opacity:1;pointer-events:auto}
+.vfade{animation:vFadeIn 1s ease forwards}
+@keyframes vFadeIn{from{opacity:0}to{opacity:1}}
+.vletterT,.vletterB{position:absolute;left:0;right:0;height:8vh;background:#000;z-index:50;pointer-events:none}
+.vletterT{top:0}.vletterB{bottom:0}
+#vprogbar{position:absolute;bottom:8vh;left:0;height:3px;background:linear-gradient(90deg,#00C4A1,#00e0b8);z-index:55;box-shadow:0 0 8px rgba(0,196,161,0.8);transition:width 0.1s linear}
+#vscenecnt{position:absolute;top:calc(8vh + 16px);right:24px;font-size:11px;color:rgba(255,255,255,0.3);z-index:55;letter-spacing:2px}
+#vskip{position:absolute;bottom:calc(8vh+16px);right:24px;font-size:12px;color:rgba(255,255,255,0.25);z-index:55;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.1);padding:6px 14px;border-radius:4px}
+#vreplay{position:absolute;bottom:calc(8vh+24px);left:50%;transform:translateX(-50%);font-size:14px;font-weight:700;letter-spacing:2px;color:#00C4A1;z-index:55;cursor:pointer;text-transform:uppercase;border:1px solid rgba(0,196,161,0.4);padding:12px 32px;border-radius:6px;background:rgba(0,196,161,0.08);display:none}
+/* S1 */
+#vs1{background:#000;flex-direction:column;text-align:center;padding:60px}
+.v-s1-num{font-family:'DM Sans',sans-serif;font-size:clamp(80px,15vw,160px);font-weight:900;line-height:0.9;color:#FF3B3B;letter-spacing:-4px;text-shadow:0 0 80px rgba(255,59,59,0.5);animation:vNumSlam 0.6s 1s cubic-bezier(0.25,0.46,0.45,0.94) both}
+@keyframes vNumSlam{from{opacity:0;transform:scale(1.3)}to{opacity:1;transform:scale(1)}}
+.v-eyebrow{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:40px;animation:vFU 1s 0.5s both}
+.v-unit{font-size:clamp(20px,4vw,48px);font-weight:800;color:rgba(255,255,255,0.5);letter-spacing:4px;margin:8px 0 32px;animation:vFU 0.8s 1.4s both}
+.v-body{font-size:clamp(15px,2vw,22px);color:rgba(255,255,255,0.45);line-height:1.6;max-width:680px;animation:vFU 0.8s 1.8s both}
+.v-body strong{color:rgba(255,255,255,0.8);font-weight:600}
+/* S2 */
+#vs2{background:linear-gradient(160deg,#1a0e05,#0d0804);overflow:hidden}
+.v-s2txt{position:absolute;top:calc(8vh+40px);left:60px;z-index:10;animation:vFU 0.8s 0.5s both}
+.v-s2time{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
+.v-s2title{font-size:clamp(26px,4vw,50px);font-weight:800;line-height:1.1;letter-spacing:-1px}
+.v-s2name{color:#FFB940}
+.v-s2sub{font-size:16px;color:rgba(255,255,255,0.4);margin-top:8px}
+.v-george{position:absolute;right:10%;bottom:8vh;width:clamp(180px,22vw,300px);animation:vGeorgeFall 1s 2.5s cubic-bezier(0.6,-0.28,0.74,0.05) both}
+@keyframes vGeorgeFall{0%{transform:translateY(0) rotate(0deg)}60%{transform:translateY(20px) rotate(15deg)}100%{transform:translateY(60px) rotate(80deg)}}
+.v-thud{position:absolute;right:8%;bottom:calc(8vh+100px);font-size:clamp(40px,6vw,80px);font-weight:900;color:#FF3B3B;letter-spacing:3px;text-shadow:0 0 40px rgba(255,59,59,0.8);opacity:0;animation:vBoom 0.3s 3.4s cubic-bezier(0.25,0.46,0.45,0.94) both}
+@keyframes vBoom{0%{opacity:0;transform:scale(2)}100%{opacity:1;transform:scale(1)}}
+.v-fallen{position:absolute;bottom:calc(8vh+16px);left:60px;opacity:0;animation:vFU 0.6s 3.8s both}
+.v-fallen-red{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,80,80,0.7);margin-bottom:6px}
+.v-fallen-h{font-size:clamp(16px,2.5vw,26px);font-weight:800;color:rgba(255,255,255,0.9)}
+.v-fallen-s{font-size:15px;color:rgba(255,255,255,0.35);margin-top:4px}
+/* S3 */
+#vs3{background:#000;flex-direction:column;align-items:center;justify-content:center}
+.v-bgpulse{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(0,196,161,0.06),transparent);animation:vBGP 2s infinite}
+@keyframes vBGP{0%,100%{opacity:0.5}50%{opacity:1}}
+.v-watch-wrap{position:relative;display:flex;flex-direction:column;align-items:center;animation:vWatchPop 0.6s 0.3s cubic-bezier(0.34,1.56,0.64,1) both}
+@keyframes vWatchPop{from{opacity:0;transform:scale(0.5)}to{opacity:1;transform:scale(1)}}
+.v-ring{position:absolute;border-radius:50%;border:2px solid rgba(0,196,161,0.4);animation:vRing 1.5s 1s infinite}
+.v-ring:nth-child(2){animation-delay:0.5s}.v-ring:nth-child(3){animation-delay:1s}
+@keyframes vRing{0%{transform:scale(0.8);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.v-alert-box{margin-top:40px;background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.3);border-radius:16px;padding:28px 48px;text-align:center;animation:vSlide 0.6s 1.2s cubic-bezier(0.34,1.56,0.64,1) both;max-width:600px}
+@keyframes vSlide{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.v-alert-lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#00C4A1;margin-bottom:10px;font-weight:600}
+.v-alert-title{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:-0.5px;margin-bottom:8px}
+.v-alert-sub{font-size:15px;color:rgba(255,255,255,0.4);line-height:1.5}
+.v-alert-sub strong{color:rgba(255,255,255,0.8);font-weight:500}
+.v-auto-badge{margin-top:20px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:1px;color:#00C4A1;animation:vFU 0.6s 2s both}
+/* S4 */
+#vs4{background:#050a0f;flex-direction:column;padding:60px;align-items:stretch}
+.v-dispatch-hdr{text-align:center;margin-bottom:clamp(16px,3vh,40px);animation:vFU 0.6s 0.3s both}
+.v-dispatch-eye{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px}
+.v-dispatch-title{font-size:clamp(32px,5vw,64px);font-weight:900;line-height:1;letter-spacing:-1px}
+.v-race-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1}
+.v-rcard{border-radius:16px;padding:clamp(16px,2.5vw,32px);display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.v-rcard.ems{background:rgba(255,59,59,0.06);border:1px solid rgba(255,59,59,0.2)}
+.v-rcard.meds{background:rgba(0,196,161,0.06);border:1px solid rgba(0,196,161,0.25);box-shadow:0 0 60px rgba(0,196,161,0.08)}
+.v-rlbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.v-rcard.ems .v-rlbl{color:rgba(255,59,59,0.7)}.v-rcard.meds .v-rlbl{color:#00C4A1}
+.v-rname{font-size:clamp(16px,2.5vw,26px);font-weight:800;letter-spacing:-0.5px}
+.v-reta{font-size:clamp(52px,8vw,90px);font-weight:900;line-height:1;letter-spacing:-2px}
+.v-rcard.ems .v-reta{color:#FF3B3B}.v-rcard.meds .v-reta{color:#00C4A1}
+.v-rbar-t{height:8px;background:rgba(255,255,255,0.05);border-radius:100px;overflow:hidden}
+.v-rbar-f{height:100%;border-radius:100px;width:0;transition:width 3s cubic-bezier(0.4,0,0.2,1)}
+.v-rcard.ems .v-rbar-f{background:linear-gradient(90deg,#ff6b6b,#FF3B3B)}
+.v-rcard.meds .v-rbar-f{background:linear-gradient(90deg,#00e0b8,#00C4A1);box-shadow:0 0 12px rgba(0,196,161,0.5)}
+.v-rstatus{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;margin-top:auto;padding:10px 14px;border-radius:10px}
+.v-rcard.ems .v-rstatus{background:rgba(255,59,59,0.08);color:rgba(255,120,120,0.8);border:1px solid rgba(255,59,59,0.15)}
+.v-rcard.meds .v-rstatus{background:rgba(0,196,161,0.1);color:#00C4A1;border:1px solid rgba(0,196,161,0.2)}
+.v-sdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.v-rcard.ems .v-sdot{background:#FF3B3B}.v-rcard.meds .v-sdot{background:#00C4A1;animation:vPulse 1s infinite}
+.v-dbadge{position:absolute;top:14px;right:14px;background:#00C4A1;color:#000;font-size:10px;font-weight:800;letter-spacing:0.5px;padding:5px 10px;border-radius:100px;opacity:0;animation:vBadgePop 0.4s 2.5s cubic-bezier(0.34,1.56,0.64,1) both}
+@keyframes vBadgePop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+.v-adv-banner{position:absolute;bottom:calc(8vh+16px);left:50%;transform:translateX(-50%);background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.3);border-radius:100px;padding:12px 28px;font-size:clamp(13px,2vw,22px);font-weight:800;letter-spacing:2px;color:#00C4A1;white-space:nowrap;opacity:0;animation:vFU 0.6s 3s both}
+/* S5 */
+#vs5{background:linear-gradient(160deg,#020d0b,#050f0e);overflow:hidden}
+.v-s5glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(0,196,161,0.12),transparent 70%);pointer-events:none}
+.v-street{position:absolute;bottom:8vh;left:0;right:0;height:30%;background:linear-gradient(to bottom,rgba(0,30,25,0.5),rgba(0,15,12,0.8));border-top:1px solid rgba(0,196,161,0.1)}
+.v-s5content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:5;padding:80px 60px;text-align:center}
+.v-s5badge{display:flex;align-items:center;gap:10px;margin-bottom:24px;background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.25);border-radius:100px;padding:8px 20px;font-size:12px;font-weight:700;letter-spacing:2px;color:#00C4A1;text-transform:uppercase;animation:vFU 0.6s 0.5s both}
+.v-s5h{font-size:clamp(36px,7vw,88px);font-weight:900;text-align:center;line-height:0.95;color:#fff;animation:vFU 0.7s 0.8s both;letter-spacing:-2px}
+.v-s5h .teal{color:#00C4A1;text-shadow:0 0 60px rgba(0,196,161,0.4)}
+.v-s5sub{font-size:clamp(14px,2vw,20px);color:rgba(255,255,255,0.4);text-align:center;margin-top:20px;line-height:1.6;max-width:600px;animation:vFU 0.7s 1.1s both}
+.v-s5sub strong{color:rgba(255,255,255,0.75);font-weight:500}
+.v-car{position:absolute;bottom:calc(8vh+20px);animation:vCarDrive 1.5s 1.5s cubic-bezier(0.25,0.46,0.45,0.94) both}
+@keyframes vCarDrive{from{left:-30%;opacity:0}to{left:8%;opacity:1}}
+.v-arrived{margin-top:28px;display:flex;align-items:center;gap:12px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.3);border-radius:12px;padding:14px 24px;animation:vFU 0.6s 2.8s both}
+/* S6 */
+#vs6{background:#000;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.v-s6bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(0,196,161,0.08),transparent);animation:vBGP 3s infinite}
+.v-s6pre{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:28px;animation:vFU 0.8s 0.3s both}
+.v-s6big{font-size:clamp(44px,10vw,130px);font-weight:900;letter-spacing:4px;line-height:0.9;animation:vBigReveal 1s 0.6s cubic-bezier(0.25,0.46,0.45,0.94) both}
+@keyframes vBigReveal{from{opacity:0;letter-spacing:20px}to{opacity:1;letter-spacing:4px}}
+.v-s6big .w1,.v-s6big .w2{color:#fff;display:block}
+.v-s6big .w3{color:#00C4A1;display:block;text-shadow:0 0 80px rgba(0,196,161,0.6)}
+.v-s6brand{font-size:clamp(16px,3vw,32px);font-weight:800;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.15);margin-top:20px;animation:vFU 0.8s 1.6s both}
+.v-s6brand span{color:rgba(0,196,161,0.6)}
+.v-s6tag{font-size:clamp(13px,1.8vw,18px);color:rgba(255,255,255,0.35);letter-spacing:0.5px;margin-top:28px;line-height:1.6;max-width:600px;animation:vFU 0.8s 2s both}
+.v-s6pat{margin-top:20px;font-size:12px;letter-spacing:2px;color:rgba(0,196,161,0.4);text-transform:uppercase;font-weight:600;animation:vFU 0.8s 2.4s both}
+/* S7 */
+#vs7{background:#000;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.v-s7bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(0,196,161,0.05),transparent)}
+.v-s7logo{font-size:clamp(28px,5vw,60px);font-weight:800;letter-spacing:-2px;margin-bottom:8px;animation:vFU 0.8s 0.3s both}
+.v-s7logo span{color:#00C4A1}
+.v-s7sub{font-size:clamp(13px,2vw,18px);color:rgba(255,255,255,0.35);letter-spacing:1px;margin-bottom:48px;animation:vFU 0.8s 0.6s both}
+.v-s7stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:52px;max-width:700px;width:100%;animation:vFU 0.8s 0.9s both}
+.v-s7snum{font-size:clamp(36px,5vw,64px);font-weight:900;letter-spacing:-1px;line-height:1}
+.v-s7snum.red{color:#FF3B3B}.v-s7snum.teal{color:#00C4A1;text-shadow:0 0 30px rgba(0,196,161,0.4)}
+.v-s7slbl{font-size:13px;color:rgba(255,255,255,0.3);margin-top:6px;line-height:1.4}
+.v-s7cta{display:flex;flex-direction:column;align-items:center;gap:12px;animation:vFU 0.8s 1.2s both}
+.v-s7url{font-size:clamp(16px,2.5vw,30px);font-weight:800;color:#00C4A1;letter-spacing:-0.5px;text-shadow:0 0 30px rgba(0,196,161,0.4)}
+.v-s7email{font-size:15px;color:rgba(255,255,255,0.3);letter-spacing:0.3px}
+.v-s7pat{margin-top:8px;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.12);text-transform:uppercase}
+@keyframes vFU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes vPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+</style>
+<div class="vletterT"></div>
+<div class="vletterB"></div>
+<div id="vprogbar" style="width:0%"></div>
+<div id="vscenecnt">01 / 07</div>
+<div id="vskip" onclick="vSkip()">Skip ↓</div>
+<div id="vreplay" onclick="vReplay()">↺ Watch Again</div>
+
+<!-- S1 -->
+<div class="vs vfade active" id="vs1">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 50%,rgba(255,59,59,0.06),transparent)"></div>
+  <div style="z-index:2;text-align:center;padding:60px">
+    <div class="v-eyebrow">The emergency response crisis in America</div>
+    <div class="v-s1-num">150,000</div>
+    <div class="v-unit">PREVENTABLE DEATHS EVERY YEAR</div>
+    <div class="v-body">The average EMS response time is <strong>14 minutes.</strong> Every minute without treatment reduces survival by <strong>6%.</strong> Thousands of drivers are already on the road — <strong>but no system connects them to emergencies.</strong></div>
+  </div>
+</div>
+<!-- S2 -->
+<div class="vs" id="vs2">
+  <div style="background:radial-gradient(ellipse 30% 40% at 20% 20%,rgba(255,180,60,0.06),transparent);position:absolute;inset:0"></div>
+  <div class="v-s2txt">
+    <div class="v-s2time">7:42 PM · Tuesday</div>
+    <div class="v-s2title">Meet <span class="v-s2name">George.</span><br>72 years old.<br>Lives alone.</div>
+    <div class="v-s2sub">He reaches for something on the shelf...</div>
+  </div>
+  <div class="v-george">
+    <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+      <ellipse cx="100" cy="310" rx="60" ry="8" fill="rgba(0,0,0,0.4)"/>
+      <path d="M70 220 Q100 240 130 220 L125 300 Q100 290 75 300Z" fill="#3A4A5C"/>
+      <rect x="72" y="140" width="56" height="90" rx="12" fill="#C8956B"/>
+      <path d="M72 155 Q100 170 128 155 L128 220 Q100 225 72 220Z" fill="#4A90D9"/>
+      <circle cx="100" cy="120" r="35" fill="#C8956B"/>
+      <path d="M65 108 Q100 80 135 108 Q130 90 100 85 Q70 90 65 108Z" fill="#A0A0A0"/>
+      <circle cx="88" cy="118" r="4" fill="#5A3820"/><circle cx="112" cy="118" r="4" fill="#5A3820"/>
+      <path d="M88 132 Q100 140 112 132" stroke="#5A3820" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <line x1="72" y1="165" x2="40" y2="120" stroke="#C8956B" stroke-width="16" stroke-linecap="round"/>
+      <line x1="128" y1="165" x2="155" y2="105" stroke="#C8956B" stroke-width="16" stroke-linecap="round"/>
+      <rect x="148" y="98" width="18" height="14" rx="4" fill="#1A1A1A"/>
+      <rect x="150" y="100" width="14" height="10" rx="2" fill="#00C4A1" opacity="0.9"/>
+      <text x="157" y="108" font-size="6" fill="#000" text-anchor="middle" font-weight="bold">M</text>
+    </svg>
+  </div>
+  <div class="v-thud">THUD!</div>
+  <div style="position:absolute;bottom:8vh;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)"></div>
+  <div class="v-fallen">
+    <div class="v-fallen-red">⚠ Fall Detected</div>
+    <div class="v-fallen-h">George can't reach his phone.</div>
+    <div class="v-fallen-s">He's in pain. Alone. The clock starts now.</div>
+  </div>
+</div>
+<!-- S3 -->
+<div class="vs" id="vs3">
+  <div class="v-bgpulse"></div>
+  <div style="z-index:2;display:flex;flex-direction:column;align-items:center;gap:28px;padding:60px;text-align:center">
+    <div class="v-watch-wrap">
+      <div class="v-ring" style="inset:-20px"></div><div class="v-ring" style="inset:-38px"></div><div class="v-ring" style="inset:-56px"></div>
+      <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" style="width:clamp(140px,18vw,220px)">
+        <rect x="70" y="0" width="60" height="50" rx="8" fill="#1A1A1A"/>
+        <rect x="30" y="45" width="140" height="170" rx="28" fill="#1C1C1E"/>
+        <rect x="36" y="51" width="128" height="158" rx="24" fill="#050F0E"/>
+        <rect x="36" y="51" width="128" height="158" rx="24" fill="rgba(0,196,161,0.15)"/>
+        <rect x="44" y="59" width="112" height="142" rx="18" fill="#050F0E"/>
+        <circle cx="100" cy="100" r="28" fill="rgba(0,196,161,0.15)" stroke="#00C4A1" stroke-width="2"/>
+        <text x="100" y="108" font-size="28" text-anchor="middle" fill="#00C4A1">!</text>
+        <text x="100" y="148" font-size="11" text-anchor="middle" fill="#00C4A1" font-family="sans-serif" font-weight="bold" letter-spacing="1">FALL DETECTED</text>
+        <rect x="52" y="160" width="96" height="22" rx="6" fill="rgba(0,196,161,0.15)" stroke="rgba(0,196,161,0.3)" stroke-width="1"/>
+        <text x="100" y="175" font-size="9" text-anchor="middle" fill="#00C4A1" font-family="sans-serif" font-weight="bold">MICAHMEDS ACTIVATING...</text>
+        <rect x="70" y="215" width="60" height="45" rx="8" fill="#1A1A1A"/>
+      </svg>
+    </div>
+    <div class="v-alert-box">
+      <div class="v-alert-lbl">🚨 MicahMeds Auto-Dispatch Activated</div>
+      <div class="v-alert-title">Fall Detected on George's Apple Watch</div>
+      <div class="v-alert-sub">No phone needed. No manual call required.<br><strong>The Life-Saving Seconds Algorithm is already running.</strong></div>
+    </div>
+    <div class="v-auto-badge"><div style="width:8px;height:8px;border-radius:50%;background:#00C4A1;animation:vPulse 1.5s infinite"></div>Comparing EMS arrival vs. MicahMeds fleet ETA now...</div>
+  </div>
+</div>
+<!-- S4 -->
+<div class="vs" id="vs4">
+  <div class="v-dispatch-hdr" style="position:absolute;top:calc(8vh+20px);left:0;right:0;text-align:center">
+    <div class="v-dispatch-eye">Life-Saving Seconds Algorithm — Real-Time</div>
+    <div class="v-dispatch-title"><span style="color:#FF3B3B">911</span> <span style="color:#607080">vs</span> <span style="color:#00C4A1">MicahMeds</span></div>
+  </div>
+  <div style="position:absolute;inset:0;top:calc(8vh+130px);bottom:8vh;padding:0 36px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch">
+    <div class="v-rcard ems" style="animation:vFU 0.6s 0.5s both;opacity:0">
+      <div><div class="v-rlbl">Traditional 911</div><div class="v-rname">Emergency Services</div></div>
+      <div class="v-reta">14<span style="font-size:0.3em;font-weight:400;color:rgba(255,255,255,0.4)"> min</span></div>
+      <div><div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:6px">Response progress</div><div class="v-rbar-t"><div class="v-rbar-f" id="v-ems-bar"></div></div></div>
+      <div style="font-size:12px;color:rgba(255,120,120,0.6);line-height:1.7">📞 Dispatcher hold time<br>🚑 Nearest unit: 14 min away<br>🚦 Traffic delays possible</div>
+      <div class="v-rstatus"><div class="v-sdot"></div>Dispatching... ETA 14 minutes</div>
+    </div>
+    <div class="v-rcard meds" style="animation:vFU 0.6s 0.7s both;opacity:0;position:relative">
+      <div class="v-dbadge">DISPATCHED ✓</div>
+      <div><div class="v-rlbl">MicahMeds Fleet</div><div class="v-rname">Certified Responder</div></div>
+      <div class="v-reta" style="color:#00C4A1">4<span style="font-size:0.3em;font-weight:400;color:rgba(255,255,255,0.4)"> min</span></div>
+      <div><div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:6px">Response progress</div><div class="v-rbar-t"><div class="v-rbar-f" id="v-fleet-bar"></div></div></div>
+      <div style="font-size:12px;color:rgba(0,196,161,0.7);line-height:1.7">⚡ Auto-dispatch: 0 seconds<br>🧑‍⚕️ NEMTAC-certified · 0.4 mi away<br>🚗 AED + BLS kit on board</div>
+      <div class="v-rstatus"><div class="v-sdot"></div>James R. dispatched — Arriving in 4 min</div>
+    </div>
+  </div>
+  <div class="v-adv-banner">⚡ +10 MINUTES FASTER — LIFE SAVED</div>
+</div>
+<!-- S5 -->
+<div class="vs" id="vs5">
+  <div class="v-s5glow"></div><div class="v-street"></div>
+  <div class="v-car">
+    <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="width:clamp(180px,25vw,280px)">
+      <ellipse cx="150" cy="110" rx="130" ry="10" fill="rgba(0,196,161,0.2)"/>
+      <path d="M20 75 Q25 50 80 45 L120 30 Q150 22 180 30 L230 45 Q270 50 280 75 L280 100 Q280 108 275 108 L25 108 Q20 108 20 100Z" fill="#1A2A2A"/>
+      <path d="M85 45 L115 32 Q135 26 155 32 L155 45Z" fill="rgba(0,196,161,0.25)" stroke="rgba(0,196,161,0.3)" stroke-width="1"/>
+      <path d="M160 45 L160 32 Q175 26 195 32 L225 45Z" fill="rgba(0,196,161,0.25)" stroke="rgba(0,196,161,0.3)" stroke-width="1"/>
+      <rect x="100" y="62" width="100" height="24" rx="4" fill="rgba(0,196,161,0.15)" stroke="rgba(0,196,161,0.4)" stroke-width="1"/>
+      <text x="150" y="78" font-size="10" text-anchor="middle" fill="#00C4A1" font-family="sans-serif" font-weight="bold" letter-spacing="1">MICAHMEDS</text>
+      <circle cx="75" cy="108" r="18" fill="#0A0A0A" stroke="#00C4A1" stroke-width="2"/><circle cx="75" cy="108" r="8" fill="#1A2A2A"/>
+      <circle cx="225" cy="108" r="18" fill="#0A0A0A" stroke="#00C4A1" stroke-width="2"/><circle cx="225" cy="108" r="8" fill="#1A2A2A"/>
+      <ellipse cx="278" cy="78" rx="8" ry="5" fill="rgba(0,196,161,0.8)"/>
+      <rect x="90" y="25" width="120" height="8" rx="3" fill="#00C4A1" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="v-s5content">
+    <div class="v-s5badge"><div style="width:8px;height:8px;border-radius:50%;background:#00C4A1;animation:vPulse 1s infinite"></div>James R. — NEMTAC Certified · Arriving Now</div>
+    <div class="v-s5h">MicahMeds<br><span class="teal">arrived first.</span></div>
+    <div class="v-s5sub"><strong>4 minutes after George fell</strong> — before the 911 dispatcher even picked up — a certified MicahMeds responder was at his door.</div>
+    <div class="v-arrived"><span style="font-size:26px">✅</span><div><div style="font-size:15px;font-weight:700;color:#00C4A1">George is stabilized. Help has arrived.</div><div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:3px">AED checked · Vitals monitored · Hospital notified</div></div></div>
+  </div>
+</div>
+<!-- S6 -->
+<div class="vs" id="vs6">
+  <div class="v-s6bg"></div>
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:60px;text-align:center">
+    <div class="v-s6pre">Those 10 minutes made all the difference.</div>
+    <div class="v-s6big"><span class="w1">LIFE</span><span class="w2">SAVING</span><span class="w3">SECONDS.</span></div>
+    <div class="v-s6brand">by <span>Micah</span>Meds</div>
+    <div class="v-s6tag">We don't replace 911. We fill the gap — with a patent-pending algorithm that routes the <strong style="color:rgba(255,255,255,0.7)">fastest available, medically-certified responder</strong> to you automatically.</div>
+    <div class="v-s6pat">Patent Pending · USPTO Provisional Filed April 30, 2026</div>
+  </div>
+</div>
+<!-- S7 -->
+<div class="vs" id="vs7">
+  <div class="v-s7bg"></div>
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:60px;width:100%">
+    <div class="v-s7logo">Micah<span>Meds</span></div>
+    <div class="v-s7sub">When Every Second Matters</div>
+    <div class="v-s7stats">
+      <div><div class="v-s7snum red">14 min</div><div class="v-s7slbl">Average EMS response</div></div>
+      <div><div class="v-s7snum teal">4 min</div><div class="v-s7slbl">MicahMeds response</div></div>
+      <div><div class="v-s7snum teal">+10 min</div><div class="v-s7slbl">Time advantage saved</div></div>
+    </div>
+    <div class="v-s7cta">
+      <div class="v-s7url">micahmeds.com</div>
+      <div class="v-s7email">lifesavingseconds@micahmeds.com</div>
+      <div class="v-s7pat">Patent Pending · NEMTAC Certified Fleet · HIPAA Compliant</div>
+    </div>
+  </div>
+</div>`
+
+  // click to advance
+  film.addEventListener('click', function(e){
+    if(e.target.id==='vskip'||e.target.id==='vreplay') return
+    if(vCurrent < VIDEO_SCENES.length-1){ clearTimeout(vSceneTimer); vCurrent++; vShowScene(vCurrent) }
+  })
+}
+
+function vShowScene(idx){
+  const film=document.getElementById('modal-film')
+  if(!film) return
+  film.querySelectorAll('.vs').forEach(s=>{s.classList.remove('active','vfade')})
+  const sc=film.querySelector('#'+VIDEO_SCENES[idx].id)
+  if(sc){sc.classList.add('active','vfade')}
+  const cnt=film.querySelector('#vscenecnt')
+  if(cnt) cnt.textContent=VIDEO_SCENES[idx].counter
+  clearTimeout(vSceneTimer)
+  if(idx < VIDEO_SCENES.length-1){
+    vSceneTimer=setTimeout(()=>{vCurrent++;vShowScene(vCurrent)},VIDEO_SCENES[idx].dur)
+  } else {
+    setTimeout(()=>{
+      const r=film.querySelector('#vreplay'),sk=film.querySelector('#vskip')
+      if(r) r.style.display='block'
+      if(sk) sk.style.display='none'
+    },4000)
+  }
+  // Trigger ETA bars for scene 4
+  if(idx===3){
+    setTimeout(()=>{const b=film.querySelector('#v-ems-bar');if(b)b.style.width='100%'},800)
+    setTimeout(()=>{const b=film.querySelector('#v-fleet-bar');if(b)b.style.width='29%'},1200)
+  }
+}
+
+function vStartProgress(){
+  const film=document.getElementById('modal-film')
+  if(!film) return
+  vStartTime=Date.now()
+  clearInterval(vProgTimer)
+  vProgTimer=setInterval(()=>{
+    const bar=film.querySelector('#vprogbar')
+    if(!bar) return
+    const pct=Math.min((Date.now()-vStartTime)/VID_TOTAL*100,100)
+    bar.style.width=pct+'%'
+    if(pct>=100) clearInterval(vProgTimer)
+  },50)
+}
+
+function vSkip(){
+  clearTimeout(vSceneTimer);clearInterval(vProgTimer)
+  const film=document.getElementById('modal-film')
+  if(film){const bar=film.querySelector('#vprogbar');if(bar)bar.style.width='100%'}
+  vCurrent=VIDEO_SCENES.length-1
+  vShowScene(vCurrent)
+  const film2=document.getElementById('modal-film')
+  if(film2){const sk=film2.querySelector('#vskip');if(sk)sk.style.display='none'}
+  setTimeout(()=>{const film3=document.getElementById('modal-film');if(film3){const r=film3.querySelector('#vreplay');if(r)r.style.display='block'}},4000)
+}
+
+function vReplay(){
+  const film=document.getElementById('modal-film')
+  if(!film) return
+  const r=film.querySelector('#vreplay'),sk=film.querySelector('#vskip'),bar=film.querySelector('#vprogbar')
+  if(r)r.style.display='none'
+  if(sk)sk.style.display='block'
+  if(bar)bar.style.width='0%'
+  const emsB=film.querySelector('#v-ems-bar'),fleetB=film.querySelector('#v-fleet-bar')
+  if(emsB)emsB.style.width='0'
+  if(fleetB)fleetB.style.width='0'
+  vCurrent=0;vShowScene(0);vStartProgress()
+}
 </script>
 </body>
 </html>
