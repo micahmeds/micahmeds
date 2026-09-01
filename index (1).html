@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MicahMeds emergency-response software concept supplementing 911; USPTO provisional application filed — patent pending." />
+  <title>MicahMeds | Emergency Response Software Platform</title>
+  <link rel="canonical" href="https://micahmeds.com/" />
+  <meta name="theme-color" content="#0a0c10" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MicahMeds" />
+  <meta property="og:url" content="https://micahmeds.com/" />
+  <meta property="og:title" content="MicahMeds — When Every Second Matters" />
+  <meta property="og:description" content="An emergency-response software concept designed to supplement 911. USPTO provisional application filed — patent pending." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MicahMeds — When Every Second Matters" />
+  <meta name="twitter:description" content="Emergency-response software supplementing 911. Patent pending." />
+  <style>
+    /* STYLE REMINDER: Medical Command Center HUD — dark charcoal, electric teal, amber and crimson status colors, engineered readouts, grid overlays, and precise emergency-operations copy. */
+    :root {
+      --bg: #0a0c10;
+      --surface: #15181e;
+      --surface-2: #1a1d23;
+      --line: #2a2d35;
+      --text: #f4f6f8;
+      --muted: #98a0aa;
+      --dim: #68717d;
+      --teal: #00d4aa;
+      --amber: #ffb020;
+      --crimson: #ff3b5c;
+      --violet: #8b5cf6;
+      --radius: 16px;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --display: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+      --body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: var(--body);
+      line-height: 1.55;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .18;
+      background-image: linear-gradient(rgba(0,212,170,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,170,.07) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      opacity: .035;
+      background: repeating-linear-gradient(to bottom, rgba(255,255,255,.5) 0, rgba(255,255,255,.5) 1px, transparent 1px, transparent 5px);
+      mix-blend-mode: screen;
+    }
+    a { color: inherit; }
+    .page { min-height: 100vh; overflow: hidden; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(42,45,53,.8);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(0,212,170,.5);
+      color: var(--teal);
+      background: rgba(0,212,170,.1);
+      clip-path: polygon(50% 0, 92% 16%, 92% 70%, 50% 100%, 8% 70%, 8% 16%);
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .brand-copy strong { display: block; font-family: var(--display); letter-spacing: -.02em; font-size: 18px; }
+    .brand-copy small { display: block; color: var(--dim); font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; margin-top: 2px; }
+    nav { display: flex; align-items: center; gap: 18px; }
+    nav a { color: var(--muted); text-decoration: none; font-family: var(--mono); font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
+    nav a:hover, nav a:focus-visible { color: var(--teal); }
+    .email-button, .outline-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: var(--display);
+      font-weight: 800;
+      letter-spacing: .01em;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .email-button { color: var(--bg); background: var(--teal); border: 1px solid var(--teal); }
+    .outline-button { color: var(--text); background: rgba(255,255,255,.02); border: 1px solid var(--line); }
+    .email-button:hover, .outline-button:hover { transform: translateY(-1px); }
+    .outline-button:hover { border-color: rgba(0,212,170,.6); }
+    .hero { position: relative; padding: 108px 0 82px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); gap: 68px; align-items: end; }
+    .eyebrow, .section-kicker { color: var(--amber); font-family: var(--mono); font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: var(--display); line-height: .98; letter-spacing: -.045em; margin: 0; }
+    h1 { max-width: 780px; margin-top: 18px; font-size: clamp(54px, 9vw, 104px); }
+    h2 { font-size: clamp(34px, 5vw, 62px); }
+    h3 { font-size: 22px; }
+    .hero-lede { max-width: 680px; color: var(--muted); font-size: 20px; margin: 26px 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-status { display: grid; gap: 10px; }
+    .status-rail, .panel { border: 1px solid var(--line); background: rgba(21,24,30,.86); position: relative; overflow: hidden; }
+    .status-rail::before, .panel::before { content: ""; position: absolute; top: 0; left: 16px; right: 16px; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,212,170,.8), transparent); }
+    .status-rail { padding: 18px; }
+    .status-rail .label { color: var(--dim); font-family: var(--mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    .status-rail .value { color: var(--teal); font-family: var(--mono); font-size: 28px; font-weight: 800; margin-top: 5px; }
+    .status-rail .detail { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 54px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .metric { padding: 18px 14px; border-right: 1px solid var(--line); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; font-family: var(--mono); font-size: 25px; letter-spacing: -.04em; }
+    .metric span { display: block; color: var(--dim); font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 88px 0; border-top: 1px solid rgba(42,45,53,.8); }
+    .section-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 40px; align-items: end; margin-bottom: 34px; }
+    .section-head p { max-width: 620px; color: var(--muted); font-size: 17px; margin: 0; }
+    .workflow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .step { min-height: 190px; padding: 20px; border: 1px solid var(--line); background: var(--surface-2); }
+    .step .number { color: var(--teal); font-family: var(--mono); font-size: 12px; }
+    .step h3 { font-size: 20px; margin: 38px 0 10px; }
+    .step p, .panel p { color: var(--muted); font-size: 14px; margin: 0; }
+    .response-compare { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+    .panel { padding: 26px; }
+    .panel-title { display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 22px; }
+    .panel-title span { color: var(--dim); font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .bar-row { margin: 18px 0; }
+    .bar-meta { display: flex; justify-content: space-between; gap: 16px; font-family: var(--mono); font-size: 12px; }
+    .bar-meta strong { color: var(--text); }
+    .bar-meta .teal { color: var(--teal); }
+    .bar-meta .red { color: var(--crimson); }
+    .bar { height: 9px; background: #2a2d35; margin-top: 8px; }
+    .bar span { display: block; height: 100%; }
+    .bar .ems { width: 72%; background: var(--crimson); }
+    .bar .micah { width: 28%; background: var(--teal); box-shadow: 0 0 15px rgba(0,212,170,.4); }
+    .readout { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 20px; border: 1px solid rgba(0,212,170,.35); background: rgba(0,212,170,.08); margin-top: 24px; }
+    .readout span { color: var(--muted); }
+    .readout strong { color: var(--teal); font-family: var(--mono); font-size: 28px; }
+    .tiers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .tier { padding: 26px; border: 1px solid var(--line); background: var(--surface-2); }
+    .tier.tier-1 { border-top: 2px solid var(--teal); }
+    .tier.tier-2 { border-top: 2px solid var(--amber); }
+    .tier-tag { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .tier-1 .tier-tag { color: var(--teal); }
+    .tier-2 .tier-tag { color: var(--amber); }
+    .tier h3 { margin: 13px 0 16px; }
+    .tier-meta { display: flex; flex-wrap: wrap; gap: 18px; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+    .tier-meta span { display: block; color: var(--dim); font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+    .tier-meta strong { display: block; font-family: var(--mono); font-size: 16px; margin-top: 4px; }
+    .lanes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .lane { padding: 22px; min-height: 180px; border: 1px solid var(--line); background: var(--surface-2); }
+    .lane .lane-num { color: var(--violet); font-family: var(--mono); font-size: 11px; }
+    .lane h3 { font-size: 18px; margin: 34px 0 10px; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fact-list { padding: 0; margin: 0; list-style: none; }
+    .fact-list li { display: flex; gap: 12px; color: var(--muted); font-size: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .fact-list li::before { content: "//"; color: var(--teal); font-family: var(--mono); }
+    .cta { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 34px; border: 1px solid rgba(255,59,92,.38); background: rgba(255,59,92,.06); }
+    .cta p { max-width: 630px; color: var(--muted); margin: 12px 0 0; }
+    footer { padding: 28px 0 44px; color: var(--dim); font-size: 12px; }
+    footer .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+    footer a { color: var(--teal); text-decoration: none; font-family: var(--mono); }
+    .disclaimer { color: #818996; font-size: 11px; margin-top: 22px; }
+    @media (max-width: 860px) {
+      nav a:not(.email-button) { display: none; }
+      .hero-grid, .response-compare, .section-head { grid-template-columns: 1fr; }
+      .workflow, .lanes { grid-template-columns: repeat(2, 1fr); }
+      .metric-row { grid-template-columns: repeat(2, 1fr); }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      .topbar { padding: 16px 0; }
+      .hero { padding: 76px 0 58px; }
+      h1 { font-size: 54px; }
+      .hero-lede { font-size: 17px; }
+      section { padding: 64px 0; }
+      .workflow, .tiers, .lanes, .facts { grid-template-columns: 1fr; }
+      .metric { padding: 15px 10px; }
+      .metric strong { font-size: 21px; }
+      .cta { display: block; padding: 24px; }
+      .cta .email-button { margin-top: 22px; width: 100%; }
+      footer .footer-inner { display: block; }
+      footer .footer-inner a { display: inline-block; margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="wrap">
+      <header class="topbar" aria-label="MicahMeds header">
+        <a class="brand" href="#top" aria-label="MicahMeds home">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span class="brand-copy"><strong>MicahMeds</strong><small>Emergency Response Software</small></span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#program">Program</a>
+          <a href="#tiers">Network concept</a>
+          <a href="#partnerships">Partnerships</a>
+          <a class="email-button" href="mailto:lifesavingseconds@micahmeds.com?subject=MicahMeds%20inquiry&body=Hello%20MicahMeds%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20the%20program.%0A%0AOrganization%3A%20%0AInterest%3A%20%0A">Email MicahMeds</a>
+        </nav>
+      </header>
+
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">[ Life-Saving Seconds ]</div>
+            <h1 id="hero-title">The fastest qualified response should reach the emergency first.</h1>
+            <p class="hero-lede">MicahMeds is a health-technology and software company developing a concept for coordinated emergency response. The software is intended to support a specialized responder network that complements 911 and traditional emergency services. Product and operating details are shared selectively with qualified partners.</p>
+            <div class="hero-actions">
+              <a class="email-button" href="mailto:lifesavingseconds@micahmeds.com?subject=MicahMeds%20partnership%20or%20pilot%20interest">Email for pilot or partnership information</a>
+              <a class="outline-button" href="#program">Review the program</a>
+            </div>
+          </div>
+          <aside class="hero-status" aria-label="Current program status">
+            <div class="status-rail"><div class="label">Product status</div><div class="value">SOFTWARE CONCEPT</div><div class="detail">MicahMeds is developing and validating a software platform for coordinated emergency response.</div></div>
+            <div class="status-rail"><div class="label">Public stage</div><div class="value">PARTNER REVIEW</div><div class="detail">The prototype is available for qualified conversations while product, safety, and operating assumptions are evaluated.</div></div>
+            <div class="status-rail"><div class="label">IP status</div><div class="value">PATENT PENDING</div><div class="detail">USPTO provisional application filed. Detailed filing materials are shared privately.</div></div><div class="status-rail"><div class="label">Operating model</div><div class="value">911 + NETWORK</div><div class="detail">The concept is designed to complement 911; it is not a live emergency service.</div></div>
+          </aside>
+        </div>
+        <div class="metric-row" aria-label="Program readouts">
+          <div class="metric"><strong>911+</strong><span>Complementary model</span></div>
+          <div class="metric"><strong>Network</strong><span>Qualification model</span></div>
+          <div class="metric"><strong>MVP</strong><span>Software prototype</span></div>
+          <div class="metric"><strong>PENDING</strong><span>USPTO patent status</span></div>
+        </div>
+      </section>
+
+      <section id="program" aria-labelledby="program-title">
+        <div class="section-head"><div><div class="section-kicker">01 / Software workflow</div><h2 id="program-title">Software for the second layer.</h2></div><p>The MicahMeds concept is designed to support 911 and EMS while software organizes qualified response pathways. Eligibility, authorization, and operating rules would be defined with appropriate clinical, legal, and agency partners.</p></div>
+        <div class="workflow" aria-label="Program workflow">
+          <article class="step"><div class="number">01</div><h3>Signal</h3><p>A request can begin through the software experience or another authorized emergency-response workflow.</p></article>
+          <article class="step"><div class="number">02</div><h3>Context</h3><p>Organize location, event context, and consented information for review.</p></article>
+          <article class="step"><div class="number">03</div><h3>Assess</h3><p>Compare available response pathways when authorized information is available.</p></article>
+          <article class="step"><div class="number">04</div><h3>Coordinate</h3><p>Support status visibility, escalation, and handoff design while 911 remains the emergency path.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="response-title">
+        <div class="section-head"><div><div class="section-kicker">02 / Dispatch software</div><h2 id="response-title">Route by verified time advantage.</h2></div><p>These bars are illustrative prototype values, not live dispatch data, clinical outcomes, or guaranteed arrival times. Actual decisions require local protocols, medical direction, verified ETAs, and 911 coordination.</p></div>
+        <div class="response-compare">
+          <div class="panel">
+            <div class="panel-title"><strong>Comparative ETA</strong><span>Prototype simulation</span></div>
+            <div class="bar-row"><div class="bar-meta"><strong>Existing response pathway</strong><span class="red">REVIEW</span></div><div class="bar"><span class="ems"></span></div></div>
+            <div class="bar-row"><div class="bar-meta"><strong>Qualified network resource</strong><span class="teal">REVIEW</span></div><div class="bar"><span class="micah"></span></div></div>
+            <div class="readout"><span>Illustrative comparison</span><strong>PRIVATE</strong></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><strong>Safety boundary</strong><span>Protocol gate</span></div>
+            <ul class="fact-list">
+              <li>911 remains the emergency path for critical or life-threatening calls.</li>
+              <li>Responder scope is limited by training, certification, equipment, medical direction, and local law.</li>
+              <li>Requests are received through the software or an authorized emergency-response workflow.</li>
+              <li>Live operations require approvals, insurance, QA, and agency coordination.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="tiers" aria-labelledby="tiers-title">
+        <div class="section-head"><div><div class="section-kicker">03 / Responder concept</div><h2 id="tiers-title">Qualification pathways, reviewed privately.</h2></div><p>The concept contemplates qualification-based responder pathways. Detailed requirements, operating protocols, and program terms are shared only with qualified partners and participants.</p></div>
+        <div class="tiers">
+          <article class="tier tier-1"><div class="tier-tag">Qualification pathway / Entry</div><h3>Protocol-approved support</h3><div class="tier-meta"><div><span>Requirements</span><strong>Private</strong></div><div><span>Program terms</span><strong>Private</strong></div></div><p>An introductory pathway for approved support and safe coordination with emergency services. Participants would operate only within verified training, authorization, and local requirements.</p></article>
+          <article class="tier tier-2"><div class="tier-tag">Qualification pathway / Expanded</div><h3>Broader approved scope</h3><div class="tier-meta"><div><span>Requirements</span><strong>Private</strong></div><div><span>Program terms</span><strong>Private</strong></div></div><p>A future pathway for broader approved response, subject to verified credentials, medical governance, equipment, insurance, local requirements, and safety review.</p></article>
+        </div>
+        <p class="disclaimer">Additional qualification pathways may be evaluated later. Any future program would remain subject to state requirements, medical direction, 911 coordination, insurance, and applicable approvals.</p>
+      </section>
+
+      <section id="partnerships" aria-labelledby="partnership-title">
+        <div class="section-head"><div><div class="section-kicker">04 / Partner network</div><h2 id="partnership-title">Build the second layer with us.</h2></div><p>MicahMeds is seeking qualified organizations and advisors to evaluate the software concept, safety model, and potential emergency-response coordination use cases.</p></div>
+        <div class="lanes">
+          <article class="lane"><div class="lane-num">A / 911 + EMS</div><h3>Coordination partners</h3><p>Explore a documented supplement that keeps 911/EMS engaged and supports clear escalation and handoff rules.</p></article>
+          <article class="lane"><div class="lane-num">B / HEALTHCARE</div><h3>Care-system dialogue</h3><p>Explore controlled software evaluation with healthcare and community organizations.</p></article>
+          <article class="lane"><div class="lane-num">C / PUBLIC HEALTH</div><h3>Public-health dialogue</h3><p>Discuss responsible evaluation of emergency-response access and community resilience.</p></article>
+          <article class="lane"><div class="lane-num">D / STRATEGIC</div><h3>Technology dialogue</h3><p>Future mobility or technology integrations may be evaluated through approved partnerships; MicahMeds is designed to remain platform-independent.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="funding-title">
+        <div class="cta"><div><div class="section-kicker" style="color: var(--crimson);">Open collaboration</div><h2 id="funding-title" style="font-size: clamp(32px, 4vw, 50px); margin-top: 12px;">Qualified conversations wanted.</h2><p>MicahMeds is exploring conversations with qualified partners, advisors, and funders who can support responsible software validation and future pilot planning. Detailed business and operating materials are shared privately.</p></div><a class="email-button" href="mailto:lifesavingseconds@micahmeds.com?subject=MicahMeds%20funding%20or%20pilot%20interest&body=Hello%20Maria%2C%0A%0AI%27m%20interested%20in%20MicahMeds.%0A%0AOrganization%3A%20%0AInterest%3A%20funding%20%2F%20pilot%20%2F%20partnership%20%2F%20responder%20program%0A">Email the founder</a></div>
+      </section>
+
+      <footer>
+        <div class="footer-inner"><div>MicahMeds · Emergency-response software concept · Every Second Counts.</div><a href="mailto:lifesavingseconds@micahmeds.com">lifesavingseconds@micahmeds.com</a></div>
+        <div class="disclaimer">This standalone file is an informational prototype. It does not provide live emergency dispatch, medical diagnosis, guaranteed arrival times, ambulance transport, or medical advice. Call 911 for an emergency. Partnership and funding discussions are exploratory, and public information is intentionally limited to high-level product context.</div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
