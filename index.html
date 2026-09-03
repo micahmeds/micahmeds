@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MicahMeds — When Every Second Matters</title>
-<meta name="description" content="Life-Saving Seconds: a public-private network closing the gap between 911 and help arriving. MicahMeds dispatches the nearest qualified responder to time-critical medical emergencies.">
+<meta name="description" content="MicahMeds is developing a 911-first emergency-response platform designed to connect a patient with a qualified nearby responder before EMS arrives, then coordinate a structured handoff to EMS. Patent pending; currently in development.">
 <meta name="author" content="MicahMeds, LLC">
 <meta name="theme-color" content="#060C12">
 <link rel="canonical" href="https://micahmeds.com/">
@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="MicahMeds">
 <meta property="og:url" content="https://micahmeds.com/">
 <meta property="og:title" content="MicahMeds — When Every Second Matters">
-<meta property="og:description" content="Our 911 system leaves communities waiting 7–14 minutes for help that is needed within 4–6. MicahMeds dispatches nurses, physicians, and trained responders in parallel with 911.">
+<meta property="og:description" content="A 911-first emergency-response platform in development — connecting patients with qualified nearby responders, then coordinating a structured handoff to EMS. Patent pending.">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MicahMeds — When Every Second Matters">
-<meta name="twitter:description" content="A triage network connecting emergencies to the nearest qualified responder. Patent pending. Baltimore pilot.">
+<meta name="twitter:description" content="A 911-first emergency-response platform in development. Patent pending. Baltimore pilot planned.">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -246,8 +246,6 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
 .footer-patent{font-size:13px;color:var(--teal);font-weight:500}
 
 /* VIDEO MODAL */
-#video-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.97);display:none;align-items:center;justify-content:center}
-#video-modal.open{display:flex}
 .modal-close{position:absolute;top:24px;right:32px;z-index:10;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:20px;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:sans-serif;line-height:1}
 .modal-close:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.4)}
 .modal-hint{position:absolute;top:36px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;font-family:'DM Sans',sans-serif;white-space:nowrap}
@@ -273,7 +271,8 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
 <nav id="nav">
   <a class="nav-logo" href="#" style="display:flex;flex-direction:column;line-height:1.1">Micah<span>Meds</span><span style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2)">When Every Second Matters</span></a>
   <div class="nav-links">
-    <a href="#how">How It Works</a>
+    <a href="#problem">How It Works</a>
+    <a href="#whynow">Why Now</a>
     <a href="#responders">Responders</a>
     <a href="#baltimore">Baltimore</a>
     <a href="#about">About</a>
@@ -291,10 +290,10 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
       Life-Saving Seconds · A Public-Private Network
     </div>
     <h1>When every<br><span class="teal">second</span><br><span class="red">matters.</span></h1>
-    <p class="hero-sub">Every emergency has <strong>life-saving seconds</strong> — and someone qualified is almost always close enough to use them. MicahMeds is a <strong>public-private partnership</strong> built on a <strong>patented triage algorithm</strong> that identifies whoever can reach a time-critical emergency fastest and dispatches them automatically, <strong>in parallel with 911</strong> — never instead of it.</p>
+    <p class="hero-sub">Every emergency has <strong>life-saving seconds</strong> — and someone qualified is almost always close enough to use them. MicahMeds is developing a <strong>911-first emergency-response platform</strong> designed to connect a patient with a qualified nearby responder when that responder can safely reach them before EMS — then coordinate a <strong>structured handoff to EMS</strong>. Patent pending, currently in development.</p>
     <div class="hero-actions">
       <a href="#problem" class="btn-primary">Understand the Gap <span class="btn-arrow">→</span></a>
-      <a href="#how" class="btn-secondary">See How It Works <span class="btn-arrow">↓</span></a>
+      <a href="#responders" class="btn-secondary">Become a Responder <span class="btn-arrow">↓</span></a>
     </div>
   </div>
   <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
@@ -307,7 +306,7 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
       <div class="section-eyebrow">The Problem</div>
       <h2 style="font-family:'Syne',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:22px">Help exists. It just cannot get there in time.</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:20px">Our 911 system was built decades ago. It leaves communities waiting <strong style="color:var(--text)">7 to 14 minutes</strong> for help that — in cardiac arrest, stroke, overdose, or severe trauma — is needed within <strong style="color:var(--text)">4 to 6</strong>. In historically underserved neighborhoods, that wait runs longer still.</p>
-      <p style="font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:0">Nothing exists between calling 911 and waiting. There is no second tier to absorb the urgent calls that are correctly triaged behind the critical ones — so a fall, a diabetic emergency, or a stroke waits in the same queue.</p>
+      <p style="font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:0">EMS must navigate distance, traffic, call volume, and staffing shortages, often on technology built long before the real-time mobile era. Meanwhile a qualified responder may already be nearby — with no reliable way to know that help is needed.</p>
     </div>
     <div class="reveal-right">
       <div style="background:var(--dark2);border:1px solid var(--border);border-radius:20px;padding:40px 36px">
@@ -319,11 +318,11 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
         </div>
         <div style="display:flex;gap:18px;margin-bottom:24px">
           <div style="flex-shrink:0;width:34px;height:34px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.25);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--teal)">2</div>
-          <div><div style="font-weight:600;margin-bottom:6px">The triage engine compares who is closest</div><div style="font-size:15px;color:var(--muted);line-height:1.7">A patent-pending triage engine calculates arrival times for the nearest ambulance and the nearest qualified responder, in parallel.</div></div>
+          <div><div style="font-weight:600;margin-bottom:6px">The triage engine compares who is closest</div><div style="font-size:15px;color:var(--muted);line-height:1.7">Location, availability, credentials, scope of practice, and estimated arrival time are compared across nearby EMS units, licensed healthcare professionals, and certified MicahMeds responders.</div></div>
         </div>
         <div style="display:flex;gap:18px;margin-bottom:24px">
           <div style="flex-shrink:0;width:34px;height:34px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.25);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--teal)">3</div>
-          <div><div style="font-weight:600;margin-bottom:6px">The system dispatches the fastest qualified responder</div><div style="font-size:15px;color:var(--muted);line-height:1.7">Automatically, and alongside the 911 dispatch — never in place of it. EMS remains the default for critical and life-threatening calls.</div></div>
+          <div><div style="font-weight:600;margin-bottom:6px">The responder arrives, then hands off to EMS</div><div style="font-size:15px;color:var(--muted);line-height:1.7">Alongside the 911 dispatch, never in place of it — followed by a structured handoff when EMS arrives. EMS remains the default for critical and life-threatening calls.</div></div>
         </div>
         <div style="border-top:1px solid var(--border);padding-top:24px;margin-top:4px">
           <div style="font-size:15px;color:var(--muted);line-height:1.7"><strong style="color:var(--text)">Who responds:</strong> off-duty nurses, physicians, PAs, and paramedics already driving nearby — plus certified NEMTAC and EMT-Basic responders trained in their own communities.</div>
@@ -351,93 +350,27 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
   </div>
 </div>
 
-<!-- STATS -->
-<div class="stats-section">
-  <div class="stats-inner">
-    <div class="stat-box reveal"><div class="stat-num red" data-count="7" data-suffix="–14 min">0</div><div class="stat-lbl">Average U.S. EMS response time</div><div class="stat-source">Published EMS response-time research</div></div>
-    <div class="stat-box reveal delay-1"><div class="stat-num red" data-count="6" data-suffix="%">0</div><div class="stat-lbl">Survival rate drop per minute without treatment</div><div class="stat-source">AHA Guidelines</div></div>
-    <div class="stat-box reveal delay-2"><div class="stat-num red" data-count="4" data-suffix=".6M">0</div><div class="stat-lbl">Time-critical emergencies in the U.S. each year</div><div class="stat-source">MicahMeds market analysis</div></div>
-    <div class="stat-box reveal delay-3"><div class="stat-num teal" data-count="3" data-suffix="–5 min">0</div><div class="stat-lbl">Target response — the Life-Saving Seconds window</div><div class="stat-source">MicahMeds projection — modeled, not measured</div></div>
-  </div>
-</div>
-
-<!-- VIDEO SECTION -->
-<div class="video-section">
-  <div class="video-inner">
+<!-- WHY NOW -->
+<div class="video-section" id="whynow">
+  <div class="eta-inner" style="max-width:1200px;margin:0 auto;padding:100px 60px">
     <div class="reveal-left">
-      <div class="video-frame" onclick="openVideo()">
-        <div style="background:linear-gradient(135deg,#0a1420,#162436);width:100%;height:100%;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;padding:40px">
-            <div style="font-size:64px;margin-bottom:20px">🚨</div>
-            <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--teal);margin-bottom:8px">The Life-Saving Seconds Story</div>
-            <div style="font-size:14px;color:var(--muted);line-height:1.6;max-width:280px;margin:0 auto">Watch George's story — and how MicahMeds changes everything.</div>
-          </div>
-        </div>
-        <div class="video-overlay">
-          <div class="play-btn"><div class="play-icon"></div></div>
-        </div>
-        <div class="video-label">▶ Watch: Life-Saving Seconds — George's Story</div>
-      </div>
+      <div class="section-eyebrow">Why Now</div>
+      <h2 class="section-title">Baltimore's dispatch backbone is twenty years old</h2>
+      <p class="section-body">At an April 2026 City Council investigative hearing, Baltimore's chief information officer testified that the twenty-year-old computer-aided dispatch system linking police, fire, and 911 will be replaced — and that the work will likely take several years.</p>
+      <p class="section-body">Roughly <strong>$12 million</strong> in state and federal funding has been secured. Vendor procurement is only now beginning. A comparable replacement in Denver took four years.</p>
+      <p class="section-body" style="margin-bottom:0">Council President Zeke Cohen described the system as what lets the city send the right responders to the right place at the right time.</p>
     </div>
     <div class="reveal-right">
-      <div class="video-text">
-        <div class="section-eyebrow">The Mission</div>
-        <h2 class="section-title">A supplement to 911 — not a replacement for it</h2>
-        <p class="section-body">Emergency medical services are resource-constrained by design, and urgent calls that are not immediately life-threatening are triaged behind those that are. Meanwhile, thousands of qualified people are already on the road — and <strong>no system connects them to the emergencies around them.</strong><br><br>MicahMeds is that connection. The triage engine compares projected response times in real time and dispatches whichever qualified responder can arrive first, with EMS notified in parallel and retained as the default for critical calls.</p>
-        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;align-items:center;gap:14px;font-size:15px"><div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚡</div><span>Real-time comparative ETA analysis — <strong style="color:var(--text)">runs in under 3 seconds</strong></span></div>
-          <div style="display:flex;align-items:center;gap:14px;font-size:15px"><div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🛡️</div><span>Licensed clinicians already driving — <strong style="color:var(--text)">nurses, EMTs, paramedics, physicians</strong></span></div>
-          <div style="display:flex;align-items:center;gap:14px;font-size:15px"><div style="width:36px;height:36px;border-radius:10px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📱</div><span>One tap in the app, or <strong style="color:var(--text)">referred straight from 911 dispatch</strong></span></div>
-        </div>
-        <div style="margin-top:36px">
-          <button onclick="openVideo()" class="btn-primary">▶ &nbsp;Watch George's Story</button>
+      <div style="background:var(--dark2);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:16px;padding:44px 40px">
+        <div style="font-family:'Syne',sans-serif;font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-0.8px;line-height:1.25;margin-bottom:24px">The fix is coming.<br><span style="color:var(--teal)">It is also years away.</span></div>
+        <p style="font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:24px">MicahMeds is designed as a parallel path that does not depend on a single legacy system — so that during those years, a qualified responder already nearby can still be reached.</p>
+        <div style="border-top:1px solid var(--border);padding-top:22px;font-size:13px;color:var(--muted2);line-height:1.7">
+          Source: Baltimore City Council investigative hearing, April 2026, as reported by <a href="https://www.cbsnews.com/baltimore/news/911-cad-system-outages-fixes-funding-maryland/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none">WJZ / CBS News Baltimore</a>. The same official testified the system had not failed during 2026.
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- HOW IT WORKS -->
-<section class="how-section" id="how">
-  <div class="how-inner">
-    <div class="how-header reveal">
-      <div class="section-eyebrow">How It Works</div>
-      <h2 class="section-title">The algorithm that runs in 3 seconds</h2>
-      <p class="section-body">Our patent-pending Triage Engine doesn't just find the nearest driver — it compares two entirely different response networks and routes to the fastest one, every single time.</p>
-    </div>
-    <div class="how-steps">
-      <div class="how-step reveal">
-        <div class="step-glow"></div><div class="step-number">01</div>
-        <div class="step-icon-wrap">🆘</div>
-        <h3>Emergency Triggered</h3>
-        <p>Activate through the MicahMeds app, or by referral from a <strong>911 dispatcher</strong>. Location and initial condition data captured immediately. <strong>"Call 911 Instead"</strong> always visible.</p>
-      </div>
-      <div class="how-step reveal delay-2">
-        <div class="step-glow"></div><div class="step-number">02</div>
-        <div class="step-icon-wrap">⚡</div>
-        <h3>Algorithm Runs</h3>
-        <p>Parallel ETA calculation across the nearest EMS unit and the nearest certified MicahMeds responder. Compares both against a defined <strong>time advantage threshold</strong> — in real time.</p>
-      </div>
-      <div class="how-step reveal delay-4">
-        <div class="step-glow"></div><div class="step-number">03</div>
-        <div class="step-icon-wrap">🚗</div>
-        <h3>Fastest Responder Dispatched</h3>
-        <p>If a certified MicahMeds responder can arrive meaningfully faster, they're dispatched instantly with live tracking and hospital pre-alert. <strong>EMS is notified in parallel</strong> and stays the default for life-threatening calls.</p>
-      </div>
-    </div>
-    <div class="algo-visual reveal">
-      <div class="algo-node"><div class="algo-box active">🆘 SOS Activated</div><div class="algo-sub">App · 911 Referral</div></div>
-      <div class="algo-arrow">→</div>
-      <div class="algo-node"><div class="algo-box active">📍 GPS + Vitals</div><div class="algo-sub">&lt;1 second</div></div>
-      <div class="algo-arrow">→</div>
-      <div class="algo-node"><div class="algo-box active">⚡ Parallel ETA Query</div><div class="algo-sub">Simultaneous</div></div>
-      <div class="algo-arrow">→</div>
-      <div class="algo-node"><div class="algo-box active">🧠 Calculate Time Advantage</div><div class="algo-sub">ETA_EMS − ETA_Fleet</div></div>
-      <div class="algo-arrow">→</div>
-      <div class="algo-node"><div class="algo-box dispatch">🚗 DISPATCH MicahMeds</div><div class="algo-sub">Live tracking · EMS notified</div></div>
-    </div>
-  </div>
-</section>
 
 <!-- WHO WE SERVE -->
 <section class="who-section">
@@ -449,7 +382,7 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
     </div>
     <div class="who-grid">
       <div class="who-card reveal delay-1"><span class="who-emoji">👴</span><h3>Seniors & Independent Adults</h3><p>Stroke symptoms, falls, diabetic emergencies — where faster transport means the difference between full recovery and lasting disability.</p></div>
-      <div class="who-card reveal delay-2"><span class="who-emoji">🏥</span><h3>Facilities &amp; Enterprise</h3><p>Assisted living, senior communities, rehabilitation centers, and corporate wellness programs — bulk coverage with dedicated account management and HIPAA-compliant documentation.</p></div>
+      <div class="who-card reveal delay-2"><span class="who-emoji">🏥</span><h3>Facilities &amp; Enterprise</h3><p>Assisted living, senior communities, rehabilitation centers, and corporate wellness programs — coverage designed around facility protocols, with privacy and documentation controls built to HIPAA standards as the platform is developed.</p></div>
       <div class="who-card reveal delay-3"><span class="who-emoji">👨‍👩‍👧</span><h3>Families & Caregivers</h3><p>Real peace of mind for the people caring at a distance — if a loved one needs help, the fastest medically-trained response is already on its way, with live tracking from the moment it's dispatched.</p></div>
     </div>
   </div>
@@ -460,19 +393,20 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
   <div class="founder-inner">
     <div class="reveal-left">
       <div class="quote-mark">"</div>
-      <blockquote class="founder-quote">"I spent 10 years as a clinician watching patients lose <span class="highlight">everything</span> in the minutes between an emergency and an ambulance. I built MicahMeds because <span class="highlight">those minutes are preventable.</span>"</blockquote>
+      <blockquote class="founder-quote">"Caring for patients one at a time taught me how to help <span class="highlight">a person.</span> MicahMeds is how I try to help <span class="highlight">a community</span> — including the people I will never meet."</blockquote>
       <div class="founder-meta">
         <div class="founder-avatar">M</div>
         <div><div class="founder-name">Maria Mikaela Vicerra Borja</div><div class="founder-title">Founder & CEO · OTR/L, PTA · USPTO Patent Pending · April 2026</div></div>
       </div>
     </div>
     <div class="reveal-right">
-      <div style="margin-bottom:20px"><div class="section-eyebrow">The Founder</div><p class="section-body" style="margin-bottom:0">A licensed clinician turned founder, with more than a decade of hands-on experience in occupational and physical therapy. MicahMeds is grounded in real clinical and community understanding rather than logistics alone — and in the delays she watched cost patients outcomes they should have kept.</p></div>
+      <div style="margin-bottom:20px"><div class="section-eyebrow">The Founder</div><p class="section-body" style="margin-bottom:18px">The idea started in front of a television. A City Council hearing was on the news — the city's dispatch system, two decades old, a replacement still years out. I had spent a decade treating people whose recoveries were shaped by minutes that passed before anyone reached them. Sitting there, the two things connected: the system will be fixed eventually, and in the meantime, someone qualified is almost always already close by.</p>
+        <p class="section-body" style="margin-bottom:18px">More than a decade in healthcare — an associate degree, a bachelor's in Allied Health and Healthcare Management, and a master's degree — alongside years of direct patient care as an occupational therapist and physical therapist assistant.</p><p class="section-body" style="margin-bottom:0">That work built a foundation in clinical decision-making, therapeutic intervention, and recovery. It also made clear that the impact could reach further than one patient at a time. MicahMeds is grounded in clinical and community understanding rather than logistics alone.</p></div>
       <div class="founder-stats">
-        <div class="f-stat reveal delay-1"><div class="f-stat-num">10+</div><div class="f-stat-label">Years clinical experience as OTR/L & PTA</div></div>
-        <div class="f-stat reveal delay-2"><div class="f-stat-num">15</div><div class="f-stat-label">Patent claims filed protecting the core algorithm</div></div>
+        <div class="f-stat reveal delay-1"><div class="f-stat-num">10+</div><div class="f-stat-label">Years in healthcare — clinician, OTR/L & PTA</div></div>
+        <div class="f-stat reveal delay-2"><div class="f-stat-num" style="font-size:28px">USPTO</div><div class="f-stat-label">Provisional patent application filed — patent pending</div></div>
         <div class="f-stat reveal delay-3"><div class="f-stat-num" style="font-size:28px">Baltimore</div><div class="f-stat-label">First pilot market — launching soon</div></div>
-        <div class="f-stat reveal delay-4"><div class="f-stat-num" style="font-size:28px">April<br>2026</div><div class="f-stat-label">Patent pending · Priority date secured</div></div>
+        <div class="f-stat reveal delay-4"><div class="f-stat-num" style="font-size:28px">April<br>2026</div><div class="f-stat-label">Provisional application filed April 30, 2026</div></div>
       </div>
     </div>
   </div>
@@ -484,29 +418,29 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
     <div class="reveal" style="max-width:680px">
       <div class="section-eyebrow">Become a Responder</div>
       <h2 class="section-title">A workforce program, not a gig.</h2>
-      <p class="section-body">MicahMeds is building a training program for people who already drive — rideshare, delivery, and commercial drivers making a living behind the wheel — and turning that time on the road into a credential, a career, and a way to save lives in their own neighborhoods.</p>
+      <p class="section-body">MicahMeds is developing a certification program for people who already drive — rideshare, delivery, and commercial drivers making a living behind the wheel — turning time on the road into a credential, a career pathway, and a way to help in their own neighborhoods. A separate pathway for already-licensed healthcare professionals is in development, pending legal and clinical review.</p>
       <p class="section-body">Responders operate as licensed independent contractors: they own their vehicles, set their own hours, and accept or decline each dispatch. All complete background screening and vehicle inspection, and carry minimum liability coverage, under medical director oversight and documented protocols.</p>
     </div>
     <div class="reveal delay-1" style="margin-top:44px;padding:32px 36px;background:linear-gradient(145deg,rgba(0,196,161,0.06),var(--dark2));border:1px solid rgba(0,196,161,0.25);border-radius:20px">
       <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap">
         <div style="font-size:40px;line-height:1">🩺</div>
         <div style="flex:1;min-width:280px">
-          <div style="font-size:12px;color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:10px">Tier P · Credentialed Professionals</div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:24px;font-weight:700;letter-spacing:-0.3px;margin-bottom:14px">If you are already a nurse, physician, PA, or paramedic, you are the network.</h3>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:12px;color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-weight:600">Tier P · Credentialed Professionals</span><span style="font-size:11px;color:#FFB020;border:1px solid rgba(255,176,32,0.35);background:rgba(255,176,32,0.08);border-radius:100px;padding:4px 12px;letter-spacing:1px;text-transform:uppercase;font-weight:600">In Development</span></div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:24px;font-weight:700;letter-spacing:-0.3px;margin-bottom:14px">A pathway being designed for nurses, physicians, PAs, and paramedics.</h3>
           <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:18px">Thousands of licensed clinicians drive rideshare and delivery between shifts, on days off, and throughout residency. They are already on the road, already trained to assess and stabilize, and frequently within blocks of an emergency they are qualified to manage — with no mechanism that permits them to respond.</p>
-          <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:22px">MicahMeds is that mechanism. Off-duty clinicians respond <strong style="color:var(--text)">within their existing scope of practice, with no additional training required</strong> — activating an enormous credentialed population that is already out there, and already qualified.</p>
+          <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:22px">Tier P is the pathway being designed for them: a route for off-duty clinicians to respond within their existing scope of practice. The liability, Good Samaritan, and medical-direction framework is <strong style="color:var(--text)">currently under review with healthcare counsel and state EMS authorities</strong>, and no Tier P responders will be onboarded until that review is complete.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:12px 18px;font-size:14px;color:var(--teal);font-weight:600">No additional training required</div>
-            <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:12px 18px;font-size:14px;color:var(--teal);font-weight:600">Your existing scope of practice</div>
-            <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:12px 18px;font-size:14px;color:var(--teal);font-weight:600">Respond on your own schedule</div>
+            <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:12px 18px;font-size:14px;color:var(--teal);font-weight:600">Designed around your existing scope of practice</div>
+            <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:12px 18px;font-size:14px;color:var(--teal);font-weight:600">Built under medical direction and state EMS protocol</div>
+            <div style="background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:10px;padding:12px 18px;font-size:14px;color:var(--teal);font-weight:600">Register interest — onboarding opens after review</div>
           </div>
         </div>
       </div>
     </div>
     <div class="reveal delay-2" style="margin-top:56px;max-width:760px">
-      <div style="font-size:12px;color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:12px">Tiers 1–3 · Certified Training Pathway</div>
+      <div style="font-size:12px;color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:12px">The MicahMeds Certification Program</div>
       <h3 style="font-family:'Syne',sans-serif;font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:14px">Already driving? We will train you.</h3>
-      <p class="section-body" style="margin-bottom:0">No clinical background required. MicahMeds provides the certification pathway and the dispatch network to put it to use — so that the hours you already spend on the road become a credential that belongs to you, wherever you go next.</p>
+      <p class="section-body" style="margin-bottom:0">No clinical background required. The MicahMeds Certification Program is being developed to create structured training and workforce-development pathways for professional drivers and community members — so that the hours you already spend on the road become a credential that belongs to you, wherever you go next.</p>
     </div>
     <div class="who-grid" style="margin-top:36px">
       <div class="who-card reveal delay-1">
@@ -535,7 +469,7 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
       <strong style="color:var(--text)">The ladder is the point.</strong> A driver can enter at Tier 1 with no medical background and progress toward a full clinical career — each credential nationally recognized and permanently theirs, whether they stay with MicahMeds or not.
     </div>
     <div style="margin-top:40px;text-align:center" class="reveal delay-4">
-      <a href="mailto:lifesavingseconds@micahmeds.com?subject=Responder%20Application%20—%20Baltimore%20Pilot" class="btn-primary">Join the Baltimore Pilot Cohort <span class="btn-arrow">→</span></a>
+      <a href="mailto:lifesavingseconds@micahmeds.com?subject=Responder%20Interest%20—%20Baltimore%20Pilot" class="btn-primary">Register Your Interest <span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -546,11 +480,11 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
     <div class="sub-header reveal">
       <div class="section-eyebrow">Where We Will Start</div>
       <h2 class="section-title">Baltimore first.</h2>
-      <p class="section-body" style="margin:0 auto;text-align:center">This is the community we come from, and where a faster response network will make the most immediate difference. Our first pilot will launch here — with DC, Philadelphia, and Boston to follow.</p>
+      <p class="section-body" style="margin:0 auto;text-align:center">We plan to begin with a focused Baltimore micro-pilot, designed to determine whether the program can safely reduce the time to appropriate first assistance, strengthen coordination with existing services, and expand community response capacity.</p>
     </div>
     <div class="who-grid" style="margin-top:8px">
-      <div class="who-card reveal delay-1"><span class="who-emoji">📜</span><h3>Patented Technology</h3><p>Our triage and dispatch algorithm is protected by a USPTO provisional patent filed April 30, 2026. The methodology at the core of MicahMeds is ours.</p></div>
-      <div class="who-card reveal delay-2"><span class="who-emoji">🏛️</span><h3>Built With The System</h3><p>MicahMeds, LLC is registered in Maryland and is being designed alongside state and city health authorities — as a supplement to 911, never a replacement.</p></div>
+      <div class="who-card reveal delay-1"><span class="who-emoji">📜</span><h3>Patent Pending</h3><p>Our comparative-ETA triage and dispatch methodology is supported by a USPTO provisional patent application filed April 30, 2026.</p></div>
+      <div class="who-card reveal delay-2"><span class="who-emoji">🏛️</span><h3>A Public-Private Model</h3><p>MicahMeds, LLC is a Maryland company formally established in 2026, developing this work alongside EMS agencies, healthcare systems, government partners, insurers, employers, and community institutions.</p></div>
       <div class="who-card reveal delay-3"><span class="who-emoji">🚀</span><h3>Launching Soon</h3><p>The Baltimore pilot is in preparation and has not yet launched. Join the waitlist below and you will be among the first to know when it goes live.</p></div>
     </div>
   </div>
@@ -572,8 +506,8 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
     <div class="waitlist-note" id="waitlist-msg">No spam. Ever. Unsubscribe anytime.</div>
     <div class="patent-badge-row">
       <div class="patent-badge"><div class="dot"></div>Patent Pending · April 2026</div>
-      <div class="patent-badge"><div class="dot"></div>NEMTAC-Certified Fleet</div>
-      <div class="patent-badge"><div class="dot"></div>HIPAA Compliant</div>
+      <div class="patent-badge"><div class="dot"></div>Certification Program in Development</div>
+      <div class="patent-badge"><div class="dot"></div>Pre-Launch · In Development</div>
       <div class="patent-badge"><div class="dot"></div>lifesavingseconds@micahmeds.com</div>
     </div>
   </div>
@@ -589,7 +523,8 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
       </div>
       <div class="footer-links-group">
         <h4>Platform</h4>
-        <a href="#how">How It Works</a>
+        <a href="#problem">How It Works</a>
+        <a href="#whynow">Why Now</a>
         <a href="#responders">Become a Responder</a>
         <a href="#baltimore">Baltimore Pilot</a>
         <a href="#about">Our Story</a>
@@ -611,20 +546,12 @@ footer{background:var(--dark);padding:60px;border-top:1px solid var(--border)}
       </div>
     </div>
     <div class="footer-bottom">
+      <div style="margin-bottom:14px;padding:14px 18px;background:rgba(255,176,32,0.06);border:1px solid rgba(255,176,32,0.25);border-radius:10px;font-size:13px;color:var(--muted);line-height:1.7;max-width:760px">MicahMeds is currently in development and is <strong style="color:var(--text)">not a live emergency-dispatch service</strong>. Nothing on this site should be relied upon in an emergency. In an emergency, call 911.</div>
       <div class="footer-copy">© 2026 MicahMeds, LLC · Maryland · All rights reserved</div>
       <div class="footer-patent">Patent Pending · USPTO Provisional Filed April 30, 2026</div>
     </div>
   </div>
 </footer>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- MARKETING VIDEO MODAL                      -->
-<!-- ═══════════════════════════════════════════ -->
-<div id="video-modal">
-  <button class="modal-close" onclick="closeVideo()">✕</button>
-  <div class="modal-hint">PRESS ESC TO CLOSE &nbsp;·&nbsp; CLICK TO ADVANCE SCENES</div>
-  <div id="modal-film"></div>
-</div>
 
 <script>
 // ── NAV SCROLL ──
@@ -695,387 +622,6 @@ function joinWaitlist(e){
     .finally(()=>{if(btn){btn.disabled=false;btn.style.opacity='1'}})
 }
 
-// ══════════════════════════════════════════════
-// MARKETING VIDEO — INLINE PLAYER
-// ══════════════════════════════════════════════
-const VIDEO_SCENES=[
-  {id:'vs1',dur:6000,counter:'01 / 07'},
-  {id:'vs2',dur:7000,counter:'02 / 07'},
-  {id:'vs3',dur:6000,counter:'03 / 07'},
-  {id:'vs4',dur:8000,counter:'04 / 07'},
-  {id:'vs5',dur:6000,counter:'05 / 07'},
-  {id:'vs6',dur:7000,counter:'06 / 07'},
-  {id:'vs7',dur:8000,counter:'07 / 07'},
-]
-const VID_TOTAL=VIDEO_SCENES.reduce((a,s)=>a+s.dur,0)
-let vCurrent=0,vSceneTimer=null,vProgTimer=null,vStartTime=null,vOpen=false
-
-function openVideo(){
-  document.getElementById('video-modal').classList.add('open')
-  document.body.style.overflow='hidden'
-  vOpen=true;vCurrent=0
-  buildFilm()
-  vShowScene(0)
-  vStartProgress()
-}
-
-function closeVideo(){
-  document.getElementById('video-modal').classList.remove('open')
-  document.body.style.overflow=''
-  vOpen=false
-  clearTimeout(vSceneTimer);clearInterval(vProgTimer)
-  document.getElementById('modal-film').innerHTML=''
-}
-
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vOpen)closeVideo()})
-
-function buildFilm(){
-  const film=document.getElementById('modal-film')
-  film.innerHTML=`
-<style>
-#modal-film{background:#000;font-family:'DM Sans',sans-serif}
-.vs{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0s}
-.vs.active{opacity:1;pointer-events:auto}
-.vfade{animation:vFadeIn 1s ease forwards}
-@keyframes vFadeIn{from{opacity:0}to{opacity:1}}
-.vletterT,.vletterB{position:absolute;left:0;right:0;height:8vh;background:#000;z-index:50;pointer-events:none}
-.vletterT{top:0}.vletterB{bottom:0}
-#vprogbar{position:absolute;bottom:8vh;left:0;height:3px;background:linear-gradient(90deg,#00C4A1,#00e0b8);z-index:55;box-shadow:0 0 8px rgba(0,196,161,0.8);transition:width 0.1s linear}
-#vscenecnt{position:absolute;top:calc(8vh + 16px);right:24px;font-size:11px;color:rgba(255,255,255,0.3);z-index:55;letter-spacing:2px}
-#vskip{position:absolute;bottom:calc(8vh+16px);right:24px;font-size:12px;color:rgba(255,255,255,0.25);z-index:55;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.1);padding:6px 14px;border-radius:4px}
-#vreplay{position:absolute;bottom:calc(8vh+24px);left:50%;transform:translateX(-50%);font-size:14px;font-weight:700;letter-spacing:2px;color:#00C4A1;z-index:55;cursor:pointer;text-transform:uppercase;border:1px solid rgba(0,196,161,0.4);padding:12px 32px;border-radius:6px;background:rgba(0,196,161,0.08);display:none}
-/* S1 */
-#vs1{background:#000;flex-direction:column;text-align:center;padding:60px}
-.v-s1-num{font-family:'DM Sans',sans-serif;font-size:clamp(80px,15vw,160px);font-weight:900;line-height:0.9;color:#FF3B3B;letter-spacing:-4px;text-shadow:0 0 80px rgba(255,59,59,0.5);animation:vNumSlam 0.6s 1s cubic-bezier(0.25,0.46,0.45,0.94) both}
-@keyframes vNumSlam{from{opacity:0;transform:scale(1.3)}to{opacity:1;transform:scale(1)}}
-.v-eyebrow{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:40px;animation:vFU 1s 0.5s both}
-.v-unit{font-size:clamp(20px,4vw,48px);font-weight:800;color:rgba(255,255,255,0.5);letter-spacing:4px;margin:8px 0 32px;animation:vFU 0.8s 1.4s both}
-.v-body{font-size:clamp(15px,2vw,22px);color:rgba(255,255,255,0.45);line-height:1.6;max-width:680px;animation:vFU 0.8s 1.8s both}
-.v-body strong{color:rgba(255,255,255,0.8);font-weight:600}
-/* S2 */
-#vs2{background:linear-gradient(160deg,#1a0e05,#0d0804);overflow:hidden}
-.v-s2txt{position:absolute;top:calc(8vh+40px);left:60px;z-index:10;animation:vFU 0.8s 0.5s both}
-.v-s2time{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
-.v-s2title{font-size:clamp(26px,4vw,50px);font-weight:800;line-height:1.1;letter-spacing:-1px}
-.v-s2name{color:#FFB940}
-.v-s2sub{font-size:16px;color:rgba(255,255,255,0.4);margin-top:8px}
-.v-george{position:absolute;right:10%;bottom:8vh;width:clamp(180px,22vw,300px);animation:vGeorgeFall 1s 2.5s cubic-bezier(0.6,-0.28,0.74,0.05) both}
-@keyframes vGeorgeFall{0%{transform:translateY(0) rotate(0deg)}60%{transform:translateY(20px) rotate(15deg)}100%{transform:translateY(60px) rotate(80deg)}}
-.v-thud{position:absolute;right:8%;bottom:calc(8vh+100px);font-size:clamp(40px,6vw,80px);font-weight:900;color:#FF3B3B;letter-spacing:3px;text-shadow:0 0 40px rgba(255,59,59,0.8);opacity:0;animation:vBoom 0.3s 3.4s cubic-bezier(0.25,0.46,0.45,0.94) both}
-@keyframes vBoom{0%{opacity:0;transform:scale(2)}100%{opacity:1;transform:scale(1)}}
-.v-fallen{position:absolute;bottom:calc(8vh+16px);left:60px;opacity:0;animation:vFU 0.6s 3.8s both}
-.v-fallen-red{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,80,80,0.7);margin-bottom:6px}
-.v-fallen-h{font-size:clamp(16px,2.5vw,26px);font-weight:800;color:rgba(255,255,255,0.9)}
-.v-fallen-s{font-size:15px;color:rgba(255,255,255,0.35);margin-top:4px}
-/* S3 */
-#vs3{background:#000;flex-direction:column;align-items:center;justify-content:center}
-.v-bgpulse{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(0,196,161,0.06),transparent);animation:vBGP 2s infinite}
-@keyframes vBGP{0%,100%{opacity:0.5}50%{opacity:1}}
-.v-watch-wrap{position:relative;display:flex;flex-direction:column;align-items:center;animation:vWatchPop 0.6s 0.3s cubic-bezier(0.34,1.56,0.64,1) both}
-@keyframes vWatchPop{from{opacity:0;transform:scale(0.5)}to{opacity:1;transform:scale(1)}}
-.v-ring{position:absolute;border-radius:50%;border:2px solid rgba(0,196,161,0.4);animation:vRing 1.5s 1s infinite}
-.v-ring:nth-child(2){animation-delay:0.5s}.v-ring:nth-child(3){animation-delay:1s}
-@keyframes vRing{0%{transform:scale(0.8);opacity:1}100%{transform:scale(1.5);opacity:0}}
-.v-alert-box{margin-top:40px;background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.3);border-radius:16px;padding:28px 48px;text-align:center;animation:vSlide 0.6s 1.2s cubic-bezier(0.34,1.56,0.64,1) both;max-width:600px}
-@keyframes vSlide{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
-.v-alert-lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#00C4A1;margin-bottom:10px;font-weight:600}
-.v-alert-title{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:-0.5px;margin-bottom:8px}
-.v-alert-sub{font-size:15px;color:rgba(255,255,255,0.4);line-height:1.5}
-.v-alert-sub strong{color:rgba(255,255,255,0.8);font-weight:500}
-.v-auto-badge{margin-top:20px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:1px;color:#00C4A1;animation:vFU 0.6s 2s both}
-/* S4 */
-#vs4{background:#050a0f;flex-direction:column;padding:60px;align-items:stretch}
-.v-dispatch-hdr{text-align:center;margin-bottom:clamp(16px,3vh,40px);animation:vFU 0.6s 0.3s both}
-.v-dispatch-eye{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px}
-.v-dispatch-title{font-size:clamp(32px,5vw,64px);font-weight:900;line-height:1;letter-spacing:-1px}
-.v-race-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1}
-.v-rcard{border-radius:16px;padding:clamp(16px,2.5vw,32px);display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
-.v-rcard.ems{background:rgba(255,59,59,0.06);border:1px solid rgba(255,59,59,0.2)}
-.v-rcard.meds{background:rgba(0,196,161,0.06);border:1px solid rgba(0,196,161,0.25);box-shadow:0 0 60px rgba(0,196,161,0.08)}
-.v-rlbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-.v-rcard.ems .v-rlbl{color:rgba(255,59,59,0.7)}.v-rcard.meds .v-rlbl{color:#00C4A1}
-.v-rname{font-size:clamp(16px,2.5vw,26px);font-weight:800;letter-spacing:-0.5px}
-.v-reta{font-size:clamp(52px,8vw,90px);font-weight:900;line-height:1;letter-spacing:-2px}
-.v-rcard.ems .v-reta{color:#FF3B3B}.v-rcard.meds .v-reta{color:#00C4A1}
-.v-rbar-t{height:8px;background:rgba(255,255,255,0.05);border-radius:100px;overflow:hidden}
-.v-rbar-f{height:100%;border-radius:100px;width:0;transition:width 3s cubic-bezier(0.4,0,0.2,1)}
-.v-rcard.ems .v-rbar-f{background:linear-gradient(90deg,#ff6b6b,#FF3B3B)}
-.v-rcard.meds .v-rbar-f{background:linear-gradient(90deg,#00e0b8,#00C4A1);box-shadow:0 0 12px rgba(0,196,161,0.5)}
-.v-rstatus{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;margin-top:auto;padding:10px 14px;border-radius:10px}
-.v-rcard.ems .v-rstatus{background:rgba(255,59,59,0.08);color:rgba(255,120,120,0.8);border:1px solid rgba(255,59,59,0.15)}
-.v-rcard.meds .v-rstatus{background:rgba(0,196,161,0.1);color:#00C4A1;border:1px solid rgba(0,196,161,0.2)}
-.v-sdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.v-rcard.ems .v-sdot{background:#FF3B3B}.v-rcard.meds .v-sdot{background:#00C4A1;animation:vPulse 1s infinite}
-.v-dbadge{position:absolute;top:14px;right:14px;background:#00C4A1;color:#000;font-size:10px;font-weight:800;letter-spacing:0.5px;padding:5px 10px;border-radius:100px;opacity:0;animation:vBadgePop 0.4s 2.5s cubic-bezier(0.34,1.56,0.64,1) both}
-@keyframes vBadgePop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
-.v-adv-banner{position:absolute;bottom:calc(8vh+16px);left:50%;transform:translateX(-50%);background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.3);border-radius:100px;padding:12px 28px;font-size:clamp(13px,2vw,22px);font-weight:800;letter-spacing:2px;color:#00C4A1;white-space:nowrap;opacity:0;animation:vFU 0.6s 3s both}
-/* S5 */
-#vs5{background:linear-gradient(160deg,#020d0b,#050f0e);overflow:hidden}
-.v-s5glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(0,196,161,0.12),transparent 70%);pointer-events:none}
-.v-street{position:absolute;bottom:8vh;left:0;right:0;height:30%;background:linear-gradient(to bottom,rgba(0,30,25,0.5),rgba(0,15,12,0.8));border-top:1px solid rgba(0,196,161,0.1)}
-.v-s5content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:5;padding:80px 60px;text-align:center}
-.v-s5badge{display:flex;align-items:center;gap:10px;margin-bottom:24px;background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.25);border-radius:100px;padding:8px 20px;font-size:12px;font-weight:700;letter-spacing:2px;color:#00C4A1;text-transform:uppercase;animation:vFU 0.6s 0.5s both}
-.v-s5h{font-size:clamp(36px,7vw,88px);font-weight:900;text-align:center;line-height:0.95;color:#fff;animation:vFU 0.7s 0.8s both;letter-spacing:-2px}
-.v-s5h .teal{color:#00C4A1;text-shadow:0 0 60px rgba(0,196,161,0.4)}
-.v-s5sub{font-size:clamp(14px,2vw,20px);color:rgba(255,255,255,0.4);text-align:center;margin-top:20px;line-height:1.6;max-width:600px;animation:vFU 0.7s 1.1s both}
-.v-s5sub strong{color:rgba(255,255,255,0.75);font-weight:500}
-.v-car{position:absolute;bottom:calc(8vh+20px);animation:vCarDrive 1.5s 1.5s cubic-bezier(0.25,0.46,0.45,0.94) both}
-@keyframes vCarDrive{from{left:-30%;opacity:0}to{left:8%;opacity:1}}
-.v-arrived{margin-top:28px;display:flex;align-items:center;gap:12px;background:rgba(0,196,161,0.1);border:1px solid rgba(0,196,161,0.3);border-radius:12px;padding:14px 24px;animation:vFU 0.6s 2.8s both}
-/* S6 */
-#vs6{background:#000;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.v-s6bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(0,196,161,0.08),transparent);animation:vBGP 3s infinite}
-.v-s6pre{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:28px;animation:vFU 0.8s 0.3s both}
-.v-s6big{font-size:clamp(44px,10vw,130px);font-weight:900;letter-spacing:4px;line-height:0.9;animation:vBigReveal 1s 0.6s cubic-bezier(0.25,0.46,0.45,0.94) both}
-@keyframes vBigReveal{from{opacity:0;letter-spacing:20px}to{opacity:1;letter-spacing:4px}}
-.v-s6big .w1,.v-s6big .w2{color:#fff;display:block}
-.v-s6big .w3{color:#00C4A1;display:block;text-shadow:0 0 80px rgba(0,196,161,0.6)}
-.v-s6brand{font-size:clamp(16px,3vw,32px);font-weight:800;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.15);margin-top:20px;animation:vFU 0.8s 1.6s both}
-.v-s6brand span{color:rgba(0,196,161,0.6)}
-.v-s6tag{font-size:clamp(13px,1.8vw,18px);color:rgba(255,255,255,0.35);letter-spacing:0.5px;margin-top:28px;line-height:1.6;max-width:600px;animation:vFU 0.8s 2s both}
-.v-s6pat{margin-top:20px;font-size:12px;letter-spacing:2px;color:rgba(0,196,161,0.4);text-transform:uppercase;font-weight:600;animation:vFU 0.8s 2.4s both}
-/* S7 */
-#vs7{background:#000;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.v-s7bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(0,196,161,0.05),transparent)}
-.v-s7logo{font-size:clamp(28px,5vw,60px);font-weight:800;letter-spacing:-2px;margin-bottom:8px;animation:vFU 0.8s 0.3s both}
-.v-s7logo span{color:#00C4A1}
-.v-s7sub{font-size:clamp(13px,2vw,18px);color:rgba(255,255,255,0.35);letter-spacing:1px;margin-bottom:48px;animation:vFU 0.8s 0.6s both}
-.v-s7stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:52px;max-width:700px;width:100%;animation:vFU 0.8s 0.9s both}
-.v-s7snum{font-size:clamp(36px,5vw,64px);font-weight:900;letter-spacing:-1px;line-height:1}
-.v-s7snum.red{color:#FF3B3B}.v-s7snum.teal{color:#00C4A1;text-shadow:0 0 30px rgba(0,196,161,0.4)}
-.v-s7slbl{font-size:13px;color:rgba(255,255,255,0.3);margin-top:6px;line-height:1.4}
-.v-s7cta{display:flex;flex-direction:column;align-items:center;gap:12px;animation:vFU 0.8s 1.2s both}
-.v-s7url{font-size:clamp(16px,2.5vw,30px);font-weight:800;color:#00C4A1;letter-spacing:-0.5px;text-shadow:0 0 30px rgba(0,196,161,0.4)}
-.v-s7email{font-size:15px;color:rgba(255,255,255,0.3);letter-spacing:0.3px}
-.v-s7pat{margin-top:8px;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.12);text-transform:uppercase}
-@keyframes vFU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes vPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
-</style>
-<div class="vletterT"></div>
-<div class="vletterB"></div>
-<div id="vprogbar" style="width:0%"></div>
-<div id="vscenecnt">01 / 07</div>
-<div id="vskip" onclick="vSkip()">Skip ↓</div>
-<div id="vreplay" onclick="vReplay()">↺ Watch Again</div>
-
-<!-- S1 -->
-<div class="vs vfade active" id="vs1">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 50%,rgba(255,59,59,0.06),transparent)"></div>
-  <div style="z-index:2;text-align:center;padding:60px">
-    <div class="v-eyebrow">The emergency response crisis in America</div>
-    <div class="v-s1-num">4.6M</div>
-    <div class="v-unit">TIME-CRITICAL EMERGENCIES EVERY YEAR</div>
-    <div class="v-body">The average EMS response time is <strong>7 to 14 minutes.</strong> The critical window for cardiac arrest, stroke, and overdose is <strong>4 to 6 minutes.</strong> Thousands of qualified responders are already on the road — <strong>but no system connects them to emergencies.</strong></div>
-  </div>
-</div>
-<!-- S2 -->
-<div class="vs" id="vs2">
-  <div style="background:radial-gradient(ellipse 30% 40% at 20% 20%,rgba(255,180,60,0.06),transparent);position:absolute;inset:0"></div>
-  <div class="v-s2txt">
-    <div class="v-s2time">7:42 PM · Tuesday</div>
-    <div class="v-s2title">Meet <span class="v-s2name">George.</span><br>72 years old.<br>Lives alone.</div>
-    <div class="v-s2sub">He reaches for something on the shelf...</div>
-  </div>
-  <div class="v-george">
-    <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg" style="width:100%">
-      <ellipse cx="100" cy="310" rx="60" ry="8" fill="rgba(0,0,0,0.4)"/>
-      <path d="M70 220 Q100 240 130 220 L125 300 Q100 290 75 300Z" fill="#3A4A5C"/>
-      <rect x="72" y="140" width="56" height="90" rx="12" fill="#C8956B"/>
-      <path d="M72 155 Q100 170 128 155 L128 220 Q100 225 72 220Z" fill="#4A90D9"/>
-      <circle cx="100" cy="120" r="35" fill="#C8956B"/>
-      <path d="M65 108 Q100 80 135 108 Q130 90 100 85 Q70 90 65 108Z" fill="#A0A0A0"/>
-      <circle cx="88" cy="118" r="4" fill="#5A3820"/><circle cx="112" cy="118" r="4" fill="#5A3820"/>
-      <path d="M88 132 Q100 140 112 132" stroke="#5A3820" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <line x1="72" y1="165" x2="40" y2="120" stroke="#C8956B" stroke-width="16" stroke-linecap="round"/>
-      <line x1="128" y1="165" x2="155" y2="105" stroke="#C8956B" stroke-width="16" stroke-linecap="round"/>
-      <rect x="148" y="98" width="18" height="14" rx="4" fill="#1A1A1A"/>
-      <rect x="150" y="100" width="14" height="10" rx="2" fill="#00C4A1" opacity="0.9"/>
-      <text x="157" y="108" font-size="6" fill="#000" text-anchor="middle" font-weight="bold">M</text>
-    </svg>
-  </div>
-  <div class="v-thud">THUD!</div>
-  <div style="position:absolute;bottom:8vh;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)"></div>
-  <div class="v-fallen">
-    <div class="v-fallen-red">⚠ Fall Detected</div>
-    <div class="v-fallen-h">George reaches his phone and calls for help.</div>
-    <div class="v-fallen-s">He's in pain. Alone. The clock starts now.</div>
-  </div>
-</div>
-<!-- S3 -->
-<div class="vs" id="vs3">
-  <div class="v-bgpulse"></div>
-  <div style="z-index:2;display:flex;flex-direction:column;align-items:center;gap:28px;padding:60px;text-align:center">
-    <div class="v-watch-wrap">
-      <div class="v-ring" style="inset:-20px"></div><div class="v-ring" style="inset:-38px"></div><div class="v-ring" style="inset:-56px"></div>
-      <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" style="width:clamp(120px,15vw,180px)">
-        <rect x="40" y="10" width="120" height="240" rx="22" fill="#1C1C1E"/>
-        <rect x="46" y="16" width="108" height="228" rx="18" fill="#050F0E"/>
-        <rect x="46" y="16" width="108" height="228" rx="18" fill="rgba(0,196,161,0.12)"/>
-        <rect x="52" y="22" width="96" height="216" rx="14" fill="#050F0E"/>
-        <circle cx="100" cy="92" r="28" fill="rgba(0,196,161,0.15)" stroke="#00C4A1" stroke-width="2"/>
-        <text x="100" y="100" font-size="26" text-anchor="middle" fill="#00C4A1">!</text>
-        <text x="100" y="146" font-size="10" text-anchor="middle" fill="#00C4A1" font-family="sans-serif" font-weight="bold" letter-spacing="1">EMERGENCY REPORTED</text>
-        <rect x="56" y="164" width="88" height="22" rx="6" fill="rgba(0,196,161,0.15)" stroke="rgba(0,196,161,0.3)" stroke-width="1"/>
-        <text x="100" y="179" font-size="8" text-anchor="middle" fill="#00C4A1" font-family="sans-serif" font-weight="bold">MICAHMEDS ACTIVATING...</text>
-        <text x="100" y="212" font-size="9" text-anchor="middle" fill="rgba(0,196,161,0.5)" font-family="sans-serif">Locating nearest responder</text>
-      </svg>
-    </div>
-    <div class="v-alert-box">
-      <div class="v-alert-lbl">🚨 MicahMeds Auto-Dispatch Activated</div>
-      <div class="v-alert-title">Emergency Reported — MicahMeds Activated</div>
-      <div class="v-alert-sub">One tap. No waiting on hold.<br><strong>The Life-Saving Seconds Algorithm is already running.</strong></div>
-    </div>
-    <div class="v-auto-badge"><div style="width:8px;height:8px;border-radius:50%;background:#00C4A1;animation:vPulse 1.5s infinite"></div>Comparing EMS arrival vs. MicahMeds fleet ETA now...</div>
-  </div>
-</div>
-<!-- S4 -->
-<div class="vs" id="vs4">
-  <div class="v-dispatch-hdr" style="position:absolute;top:calc(8vh+20px);left:0;right:0;text-align:center">
-    <div class="v-dispatch-eye">Life-Saving Seconds Algorithm — Real-Time</div>
-    <div class="v-dispatch-title"><span style="color:#FF3B3B">911</span> <span style="color:#607080">vs</span> <span style="color:#00C4A1">MicahMeds</span></div>
-  </div>
-  <div style="position:absolute;inset:0;top:calc(8vh+130px);bottom:8vh;padding:0 36px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch">
-    <div class="v-rcard ems" style="animation:vFU 0.6s 0.5s both;opacity:0">
-      <div><div class="v-rlbl">Traditional 911</div><div class="v-rname">Emergency Services</div></div>
-      <div class="v-reta">14<span style="font-size:0.3em;font-weight:400;color:rgba(255,255,255,0.4)"> min</span></div>
-      <div><div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:6px">Response progress</div><div class="v-rbar-t"><div class="v-rbar-f" id="v-ems-bar"></div></div></div>
-      <div style="font-size:12px;color:rgba(255,120,120,0.6);line-height:1.7">📞 Dispatcher hold time<br>🚑 Nearest unit: 14 min away<br>🚦 Traffic delays possible</div>
-      <div class="v-rstatus"><div class="v-sdot"></div>Dispatching... ETA 14 minutes</div>
-    </div>
-    <div class="v-rcard meds" style="animation:vFU 0.6s 0.7s both;opacity:0;position:relative">
-      <div class="v-dbadge">DISPATCHED ✓</div>
-      <div><div class="v-rlbl">MicahMeds Fleet</div><div class="v-rname">Certified Responder</div></div>
-      <div class="v-reta" style="color:#00C4A1">4<span style="font-size:0.3em;font-weight:400;color:rgba(255,255,255,0.4)"> min</span></div>
-      <div><div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:6px">Response progress</div><div class="v-rbar-t"><div class="v-rbar-f" id="v-fleet-bar"></div></div></div>
-      <div style="font-size:12px;color:rgba(0,196,161,0.7);line-height:1.7">⚡ Auto-dispatch: 0 seconds<br>🧑‍⚕️ NEMTAC-certified · 0.4 mi away<br>🚗 AED + BLS kit on board</div>
-      <div class="v-rstatus"><div class="v-sdot"></div>James R. dispatched — Arriving in 4 min</div>
-    </div>
-  </div>
-  <div class="v-adv-banner">⚡ +10 MINUTES FASTER — LIFE SAVED</div>
-</div>
-<!-- S5 -->
-<div class="vs" id="vs5">
-  <div class="v-s5glow"></div><div class="v-street"></div>
-  <div class="v-car">
-    <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="width:clamp(180px,25vw,280px)">
-      <ellipse cx="150" cy="110" rx="130" ry="10" fill="rgba(0,196,161,0.2)"/>
-      <path d="M20 75 Q25 50 80 45 L120 30 Q150 22 180 30 L230 45 Q270 50 280 75 L280 100 Q280 108 275 108 L25 108 Q20 108 20 100Z" fill="#1A2A2A"/>
-      <path d="M85 45 L115 32 Q135 26 155 32 L155 45Z" fill="rgba(0,196,161,0.25)" stroke="rgba(0,196,161,0.3)" stroke-width="1"/>
-      <path d="M160 45 L160 32 Q175 26 195 32 L225 45Z" fill="rgba(0,196,161,0.25)" stroke="rgba(0,196,161,0.3)" stroke-width="1"/>
-      <rect x="100" y="62" width="100" height="24" rx="4" fill="rgba(0,196,161,0.15)" stroke="rgba(0,196,161,0.4)" stroke-width="1"/>
-      <text x="150" y="78" font-size="10" text-anchor="middle" fill="#00C4A1" font-family="sans-serif" font-weight="bold" letter-spacing="1">MICAHMEDS</text>
-      <circle cx="75" cy="108" r="18" fill="#0A0A0A" stroke="#00C4A1" stroke-width="2"/><circle cx="75" cy="108" r="8" fill="#1A2A2A"/>
-      <circle cx="225" cy="108" r="18" fill="#0A0A0A" stroke="#00C4A1" stroke-width="2"/><circle cx="225" cy="108" r="8" fill="#1A2A2A"/>
-      <ellipse cx="278" cy="78" rx="8" ry="5" fill="rgba(0,196,161,0.8)"/>
-      <rect x="90" y="25" width="120" height="8" rx="3" fill="#00C4A1" opacity="0.9"/>
-    </svg>
-  </div>
-  <div class="v-s5content">
-    <div class="v-s5badge"><div style="width:8px;height:8px;border-radius:50%;background:#00C4A1;animation:vPulse 1s infinite"></div>James R. — NEMTAC Certified · Arriving Now</div>
-    <div class="v-s5h">MicahMeds<br><span class="teal">arrived first.</span></div>
-    <div class="v-s5sub"><strong>4 minutes after George fell</strong> — before the 911 dispatcher even picked up — a certified MicahMeds responder was at his door.</div>
-    <div class="v-arrived"><span style="font-size:26px">✅</span><div><div style="font-size:15px;font-weight:700;color:#00C4A1">George is stabilized. Help has arrived.</div><div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:3px">AED checked · Vitals monitored · Hospital notified</div></div></div>
-  </div>
-</div>
-<!-- S6 -->
-<div class="vs" id="vs6">
-  <div class="v-s6bg"></div>
-  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:60px;text-align:center">
-    <div class="v-s6pre">Those 10 minutes made all the difference.</div>
-    <div class="v-s6big"><span class="w1">LIFE</span><span class="w2">SAVING</span><span class="w3">SECONDS.</span></div>
-    <div class="v-s6brand">by <span>Micah</span>Meds</div>
-    <div class="v-s6tag">We don't replace 911. We fill the gap — with a patent-pending algorithm that routes the <strong style="color:rgba(255,255,255,0.7)">fastest available, medically-certified responder</strong> to you automatically.</div>
-    <div class="v-s6pat">Patent Pending · USPTO Provisional Filed April 30, 2026</div>
-  </div>
-</div>
-<!-- S7 -->
-<div class="vs" id="vs7">
-  <div class="v-s7bg"></div>
-  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:60px;width:100%">
-    <div class="v-s7logo">Micah<span>Meds</span></div>
-    <div class="v-s7sub">When Every Second Matters</div>
-    <div class="v-s7stats">
-      <div><div class="v-s7snum red">7–14 min</div><div class="v-s7slbl">Average EMS response</div></div>
-      <div><div class="v-s7snum teal">3–5 min</div><div class="v-s7slbl">MicahMeds target response</div></div>
-      <div><div class="v-s7snum teal">4–6 min</div><div class="v-s7slbl">The critical window</div></div>
-    </div>
-    <div class="v-s7cta">
-      <div class="v-s7url">micahmeds.com</div>
-      <div class="v-s7email">lifesavingseconds@micahmeds.com</div>
-      <div class="v-s7pat">Patent Pending · NEMTAC Certified Fleet · HIPAA Compliant</div>
-    </div>
-  </div>
-</div>`
-
-  // click to advance
-  film.addEventListener('click', function(e){
-    if(e.target.id==='vskip'||e.target.id==='vreplay') return
-    if(vCurrent < VIDEO_SCENES.length-1){ clearTimeout(vSceneTimer); vCurrent++; vShowScene(vCurrent) }
-  })
-}
-
-function vShowScene(idx){
-  const film=document.getElementById('modal-film')
-  if(!film) return
-  film.querySelectorAll('.vs').forEach(s=>{s.classList.remove('active','vfade')})
-  const sc=film.querySelector('#'+VIDEO_SCENES[idx].id)
-  if(sc){sc.classList.add('active','vfade')}
-  const cnt=film.querySelector('#vscenecnt')
-  if(cnt) cnt.textContent=VIDEO_SCENES[idx].counter
-  clearTimeout(vSceneTimer)
-  if(idx < VIDEO_SCENES.length-1){
-    vSceneTimer=setTimeout(()=>{vCurrent++;vShowScene(vCurrent)},VIDEO_SCENES[idx].dur)
-  } else {
-    setTimeout(()=>{
-      const r=film.querySelector('#vreplay'),sk=film.querySelector('#vskip')
-      if(r) r.style.display='block'
-      if(sk) sk.style.display='none'
-    },4000)
-  }
-  // Trigger ETA bars for scene 4
-  if(idx===3){
-    setTimeout(()=>{const b=film.querySelector('#v-ems-bar');if(b)b.style.width='100%'},800)
-    setTimeout(()=>{const b=film.querySelector('#v-fleet-bar');if(b)b.style.width='29%'},1200)
-  }
-}
-
-function vStartProgress(){
-  const film=document.getElementById('modal-film')
-  if(!film) return
-  vStartTime=Date.now()
-  clearInterval(vProgTimer)
-  vProgTimer=setInterval(()=>{
-    const bar=film.querySelector('#vprogbar')
-    if(!bar) return
-    const pct=Math.min((Date.now()-vStartTime)/VID_TOTAL*100,100)
-    bar.style.width=pct+'%'
-    if(pct>=100) clearInterval(vProgTimer)
-  },50)
-}
-
-function vSkip(){
-  clearTimeout(vSceneTimer);clearInterval(vProgTimer)
-  const film=document.getElementById('modal-film')
-  if(film){const bar=film.querySelector('#vprogbar');if(bar)bar.style.width='100%'}
-  vCurrent=VIDEO_SCENES.length-1
-  vShowScene(vCurrent)
-  const film2=document.getElementById('modal-film')
-  if(film2){const sk=film2.querySelector('#vskip');if(sk)sk.style.display='none'}
-  setTimeout(()=>{const film3=document.getElementById('modal-film');if(film3){const r=film3.querySelector('#vreplay');if(r)r.style.display='block'}},4000)
-}
-
-function vReplay(){
-  const film=document.getElementById('modal-film')
-  if(!film) return
-  const r=film.querySelector('#vreplay'),sk=film.querySelector('#vskip'),bar=film.querySelector('#vprogbar')
-  if(r)r.style.display='none'
-  if(sk)sk.style.display='block'
-  if(bar)bar.style.width='0%'
-  const emsB=film.querySelector('#v-ems-bar'),fleetB=film.querySelector('#v-fleet-bar')
-  if(emsB)emsB.style.width='0'
-  if(fleetB)fleetB.style.width='0'
-  vCurrent=0;vShowScene(0);vStartProgress()
-}
 </script>
 </body>
 </html>
